@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "repository": "EvripidouKris/CORE-PIVOT-release",
+  "repository": "AISL-at-Imperial-College-London/CORE-PIVOT-release",
   "release_tag": "selected-checkpoints-v1",
   "complete": true,
   "source": "Original frozen main-paper selection, not later paired-CQL or extraction ablations",

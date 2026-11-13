@@ -68,6 +68,6 @@ and existing paired-CQL tests passed. These checks did not train any models or
 rerun the controller evaluations; they verify figure reproduction and packaging.
 
 Source packaging excludes full replay, checkpoint binaries, generated videos,
-computational-timing records and machine-specific files. Repository and checkpoint
-access remain private. Software authorship, paper authorship and third-party
+computational-timing records and machine-specific files. The repository and selected
+checkpoints are publicly accessible. Software authorship, paper authorship and third-party
 licences remain distinct; see `NOTICE.md` and `CITATION.cff`.

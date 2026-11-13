@@ -2,7 +2,7 @@
 
 The accompanying manuscript is in preparation, with preprint release planned
 soon. Its link and citation metadata will be added when available. This repository
-is currently a private reviewer package; no publication or acceptance is claimed.
+is a public reproduction package; no manuscript publication or acceptance is claimed.
 
 Original code and accompanying repository materials are licensed under the
 [MIT License](LICENSE), copyright (c) 2026 Autonomous Industrial Systems Laboratory,

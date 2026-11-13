@@ -1,7 +1,8 @@
 """Fetch or verify the selected paper checkpoints, without importing ML libraries.
 
-Authentication is read from GITHUB_TOKEN, GH_TOKEN, ``gh auth token``, or the
-configured Git credential helper, in that order. Credentials stay in memory.
+The public release needs no authentication. Optional credentials are read from
+GITHUB_TOKEN, GH_TOKEN, ``gh auth token``, or the configured Git credential helper,
+in that order. Credentials stay in memory.
 For an offline transfer, pass ``--archive selected-checkpoints-v1.zip``.
 The ZIP must contain exactly the unique paths named by the manifest, relative
 to its directory, without a top-level folder or explicit directory entries.

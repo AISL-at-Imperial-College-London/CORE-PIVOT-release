@@ -41,7 +41,7 @@ validation_stronger wind 51139: 237.872
 The JSON is saved to `runs/reviewer/iql_smoke.json`. Small numerical differences
 are possible across platforms. This verifies loading and inference, not all paper
 results. Repeated evaluations refuse to overwrite outputs: choose a new filename.
-Private checkpoints require GitHub access; see [checkpoint help](../checkpoints/README.md).
+The checkpoints are public and require no GitHub sign-in; see [checkpoint help](../checkpoints/README.md).
 
 For a check without downloads:
 

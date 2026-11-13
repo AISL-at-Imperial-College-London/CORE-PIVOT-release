@@ -7,7 +7,7 @@ date-released: 2026-11-05
 authors:
   - family-names: Evripidou
     given-names: Christos
-repository-code: "https://github.com/EvripidouKris/CORE-PIVOT-release"
+repository-code: "https://github.com/AISL-at-Imperial-College-London/CORE-PIVOT-release"
 preferred-citation:
   type: generic
   title: "CORE-PIVOT: Conservative Offline Reinforcement Learning with Policy Improvement via Value-Guided Optimisation at Test Time"

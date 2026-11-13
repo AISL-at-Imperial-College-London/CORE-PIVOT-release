@@ -30,7 +30,7 @@ to verify a saved controller.
 Install [Git](https://git-scm.com/downloads), then clone once:
 
 ```powershell
-git clone https://github.com/EvripidouKris/CORE-PIVOT-release.git
+git clone https://github.com/AISL-at-Imperial-College-London/CORE-PIVOT-release.git
 cd CORE-PIVOT-release
 ```
 
@@ -51,7 +51,7 @@ a two-episode software check, not a complete benchmark. Existing outputs are
 protected: use a new `--output` filename if repeating a run.
 
 For Linux/macOS, manual uv installation or CUDA, see [setup](docs/SETUP.md).
-Repository and checkpoint access must be granted while this repository is private.
+The repository and selected checkpoints are public; no GitHub sign-in is required.
 
 ## Make the figures and tables
 
@@ -101,9 +101,9 @@ Mercangöz**; see [CITATION.cff](CITATION.cff). Software authorship and maintena
 remain attributed to Christos Evripidou. Third-party credits and licenses are
 retained in [NOTICE.md](NOTICE.md).
 
-This repository is currently a **private reviewer package**. The manuscript has
-not yet been published. See [verification](docs/VERIFICATION.md) for the scope
-of reproduction checks. Repository and checkpoint access remain private.
+This is a **public reproduction package** maintained under AISL. The manuscript
+has not yet been published. See [verification](docs/VERIFICATION.md) for the scope
+of reproduction checks.
 
 ## License
 

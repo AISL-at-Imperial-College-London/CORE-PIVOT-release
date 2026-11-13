@@ -13,7 +13,7 @@ baseline is not trained five times.
 ## Evaluate released weights first (no training)
 
 For an independent rollout of the paper's selected controllers, download the
-private checkpoint asset and run the reviewer launcher:
+public checkpoint asset and run the reviewer launcher:
 
 ```sh
 uv run --locked python scripts/download_checkpoints.py
@@ -23,7 +23,7 @@ uv run --locked python run.py evaluate core-pivot --all-seeds
 uv run --locked python run.py evaluate all --all-seeds --split test --allow-test
 ```
 
-This requires repository access, but no full replay or GPU. Validation is the
+No GitHub sign-in, full replay or GPU is required. Validation is the
 default; `--winds 1` is a two-episode software check. The selected-weight manifest
 fixes model hashes, seed identities, training steps and BC dependencies. All
 outputs are fresh evaluations, not copies of the archived paper statistics.

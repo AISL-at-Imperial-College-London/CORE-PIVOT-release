@@ -1,8 +1,8 @@
 # Selected paper checkpoints
 
 The original main-paper weights are distributed separately from Git in the
-[private selected-checkpoints-v1 release](https://github.com/EvripidouKris/CORE-PIVOT-release/releases/tag/selected-checkpoints-v1).
-Repository access is required. The committed `selected/manifest.json` fixes the
+[public selected-checkpoints-v1 release](https://github.com/AISL-at-Imperial-College-London/CORE-PIVOT-release/releases/tag/selected-checkpoints-v1).
+No GitHub sign-in is required. The committed `selected/manifest.json` fixes the
 method, seed, step, file size and SHA-256 for each checkpoint and its BC dependency.
 The download contains 35 files (about 267 MiB compressed).
 
@@ -15,17 +15,17 @@ uv run --locked python run.py evaluate core-pivot --seed 123
 ```
 
 No training dataset or GPU is needed. The downloader checks every file before
-installation and refuses to overwrite a different existing checkpoint. It can
-reuse an existing GitHub credential without printing it. If authentication is
-unavailable, download the ZIP while signed into GitHub and import it:
+installation and refuses to overwrite a different existing checkpoint. If the
+automatic download is unavailable, download the ZIP from the public release page
+and import it:
 
 ```sh
 uv run --locked python scripts/download_checkpoints.py --archive PATH_TO_ZIP
 ```
 
-Do not commit credentials or paste tokens into command arguments. A token supplied
-through `GH_TOKEN` or `GITHUB_TOKEN` needs access to this repository's contents.
-The downloader also supports GitHub CLI and Git credential-manager sign-ins.
+Authentication is optional. The downloader can reuse credentials from `GH_TOKEN`,
+`GITHUB_TOKEN`, GitHub CLI or Git credential-manager sign-ins without printing them.
+Do not commit credentials or paste tokens into command arguments.
 
 ## What these weights represent
 

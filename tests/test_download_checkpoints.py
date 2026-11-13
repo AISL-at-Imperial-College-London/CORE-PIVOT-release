@@ -42,7 +42,7 @@ class CheckpointDownloadTests(unittest.TestCase):
                          'bc/seed123.pt': b'a dummy behavior checkpoint'}
         self.data = {
             'schema_version': 1,
-            'repository': 'EvripidouKris/CORE-PIVOT-release',
+            'repository': 'AISL-at-Imperial-College-London/CORE-PIVOT-release',
             'release_tag': 'selected-checkpoints-v1',
             'checkpoints': [
                 {'method': 'test-policy', 'seed': 123, 'step': 10000,
@@ -297,6 +297,22 @@ class CheckpointDownloadTests(unittest.TestCase):
         self.assertEqual(requests[1].get_header('Accept'), 'application/octet-stream')
         self.assertEqual(requests[1].get_header('Authorization'), 'Bearer secret-never-printed')
         self.assertNotIn('secret-never-printed', requests[1].full_url)
+
+    def test_public_release_download_needs_no_authentication(self):
+        manifest = self.save_manifest()
+        payload = self.archive.read_bytes()
+        metadata = {'assets': [{'id': 1234, 'name': manifest.asset_name, 'size': len(payload)}]}
+        opener = Mock()
+        opener.open.side_effect = [Response(json.dumps(metadata).encode()), Response(payload)]
+        destination = self.root / 'public-download.zip'
+        with (patch.object(downloader, 'get_token', return_value=None),
+              patch.object(downloader.urllib.request, 'build_opener', return_value=opener)):
+            downloader.download_archive(manifest, destination)
+        self.assertEqual(destination.read_bytes(), payload)
+        for call in opener.open.call_args_list:
+            request = call.args[0]
+            self.assertIn('/repos/AISL-at-Imperial-College-London/CORE-PIVOT-release/', request.full_url)
+            self.assertIsNone(request.get_header('Authorization'))
 
     def test_download_rejects_wrong_metadata_length_or_digest(self):
         manifest = self.save_manifest()
