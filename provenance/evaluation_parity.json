@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "same_runtime_original_packet_action_parity": [
+    {
+      "method": "easybcq",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "easybcq",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "hoflon",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "hoflon",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "core-pivot",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "core-pivot",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "iql",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "iql",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "cql",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "cql",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "td3-bc",
+      "stronger": false,
+      "wind_seed": 51020,
+      "actions": 20,
+      "bitwise_equal": true
+    },
+    {
+      "method": "td3-bc",
+      "stronger": true,
+      "wind_seed": 51139,
+      "actions": 20,
+      "bitwise_equal": true
+    }
+  ],
+  "full_cql_validation_rollouts": [
+    {
+      "method": "cql",
+      "seed": 123,
+      "wind_seed": 51020,
+      "stronger": false,
+      "transitions": 750,
+      "historical_validation_cost": 51.97196992731798,
+      "reproduced_cost": 51.9719513058112,
+      "tolerance": {
+        "rtol": 0.001,
+        "atol": 0.001
+      }
+    },
+    {
+      "method": "cql",
+      "seed": 123,
+      "wind_seed": 51139,
+      "stronger": true,
+      "transitions": 750,
+      "historical_validation_cost": 213.32486837325362,
+      "reproduced_cost": 213.32478446204183,
+      "tolerance": {
+        "rtol": 0.001,
+        "atol": 0.001
+      }
+    }
+  ],
+  "original_robustness_trace_hashes_matched": 340,
+  "note": "This validates 20 closed-loop actions per method/condition on the local CPU runtime, not full HPC numerical equivalence."
+}

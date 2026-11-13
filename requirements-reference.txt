@@ -1,0 +1,11 @@
+# Numerical versions in archived HPC records, also available in the local audit.
+# Historical GPU interpreter: Python 3.12.3; CUDA PyTorch build: 2.9.1+cu130.
+# Install the matching CUDA wheel separately when exact GPU-runtime comparison is needed.
+# These pins document the reference stack, not a promise of cross-platform bitwise equality.
+numpy==2.5.1
+torch==2.9.1
+scipy==1.18.0
+gymnasium==1.0.0
+matplotlib==3.11.1
+imageio-ffmpeg==0.8.1
+pandas==3.0.5

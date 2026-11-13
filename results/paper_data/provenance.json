@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "paper_commit": "1827425a7880214868cb62f9bc3c03d21459c72e",
+  "source_artifacts": [
+    {
+      "artifact": "learning_curves/provenance.json",
+      "sha256": "bb7ff638f64506b3f4fd5ba4ecddaa6cf9d441c647d858301903e7479f078944"
+    },
+    {
+      "artifact": "learning_curves/source_arrays.npz",
+      "sha256": "d8e5b6ce5f33fae244b8ae47f479ec396418971758f9a060521c3adc751cc00b"
+    },
+    {
+      "artifact": "selected_algorithms_test_results.json",
+      "sha256": "cc5fa4dbf61130f077169db48f8d03c263aa385a4dfc6596a45fe373542d2e43"
+    },
+    {
+      "artifact": "fixed_baselines.json",
+      "sha256": "8da9f492f4b16cabe5e968f3b91172468b89ee08d1b5b7879451604520055c8f"
+    },
+    {
+      "artifact": "robustness/statistics_and_audit.json",
+      "sha256": "adf1e6b092fabf5e3753a97c88ce82bc74b381a0c825d7816a7404ddfaa9c9c9"
+    },
+    {
+      "artifact": "trajectory_grid_20261026/trajectory_grid_results.json",
+      "sha256": "28c62b4bb525de17327c80c5669ac9d64e8b5079e347e87118ceabea3565afce"
+    },
+    {
+      "artifact": "trajectory_severities_20261027/trajectory_grid_results.json",
+      "sha256": "c9437b5b509e19d62937f3ed8cb727e059f9cb91aabcb55517eeefc44e094203"
+    },
+    {
+      "artifact": "trajectory_densegusts_20261027/trajectory_grid_results.json",
+      "sha256": "ccd47c99d0861e9c06be8d4344210e80ff50fc075ce6769e7a933fe4905f3a63"
+    },
+    {
+      "artifact": "endpoint/audit_statistics.json",
+      "sha256": "fa07856b65776bbeccb99500122d81d715b9d9f680ef213f307b21fb1af754d6"
+    },
+    {
+      "artifact": "endpoint_test_robustness_20261103.json",
+      "sha256": "a0f0b0ec2a381a04be409bf8d094ebf09b236ba19a58df031e00eb96d6b3815d"
+    },
+    {
+      "artifact": "hoflon_radius500k_curves.json",
+      "sha256": "c7ebcc665e54656ef0f0ba7ad42844d01b52c3e8ea0f451df1f6b562aa9ea6cd"
+    },
+    {
+      "artifact": "hoflon_boxonly_curves_20261103.json",
+      "sha256": "d2fb19ff209eb0b95e29e4aeeefea14ea2af9530ca189961cf59f0395c25f2ef"
+    },
+    {
+      "artifact": "core_lambda/provenance.json",
+      "sha256": "00f97393fd4d965f02ea7fb79cf375232f9106fc3bafd5d9d6de2f41dfc32e7e"
+    },
+    {
+      "artifact": "core_lambda/source_arrays.npz",
+      "sha256": "d2f0a5716188bdef5f7a22b3ae5a7fa83b343810ed1a546411a8cdac2e778b48"
+    },
+    {
+      "artifact": "iql_fixedstd50k_20261103.json",
+      "sha256": "8d01d427da3035bda1676ff451a2e3ada6e9547717dcbf203275e0c622c1018a"
+    },
+    {
+      "artifact": "iql_awr_fixedstd50k_20261104.json",
+      "sha256": "94b4f57d81c395cb25cabdbfc20fb99c9071531cdd498fff3eea067632c44eaf"
+    },
+    {
+      "artifact": "fixed_sigma_awr/audit.json",
+      "sha256": "203d7025dadf48cb9319c77c11851f34f3c8319137164dfa9031a03415a1e83b"
+    },
+    {
+      "artifact": "cql_backup/seed_mean_curves.csv",
+      "sha256": "d33c2279d71f272f7bce2ceb455e42af8d128eb90fa0b57a1ed36ab8a9abeeb9"
+    },
+    {
+      "artifact": "selected_test/selection_manifest.json",
+      "sha256": "ccd5322de6a4bf6be8b5685d705faaba38d970955b95441ad649162a1bd4188d"
+    },
+    {
+      "artifact": "historical/episode_matrix.npz",
+      "sha256": "a7e5b641bd2011676680c71449f07688eb3342bb62f1683811043882a210c9f9"
+    },
+    {
+      "artifact": "historical/winds.npz",
+      "sha256": "cefa683dedceb6888275f74e70055b22a395a822263b3e3d66a9997d43c8810f"
+    }
+  ],
+  "generated_files": {
+    "benchmark_data.npz": "a3d2c68723f53e0b4fc6999263fa07d95f38b3e06b93bf320469f095e1e221dc",
+    "paper_results.json": "434d8e2b953910c1371ec2ff8975e9f89a0fced334f96c0b8420b724395a86f2",
+    "paired_cql_validation.npz": "33c3670bc4bf0c45b5f53b9e1d56937ed36f2e9a7cff3b1bd0434ea2808ca359"
+  },
+  "paired_cql_update": {
+    "date": "2026-11-05",
+    "audit": "provenance/paired_cql_results.json",
+    "audit_sha256": "5817d22165384ab960cae3f1d95fb78f9332d4e091ed3fabd58c4c9c272e0d51",
+    "paper_figure_commit": "5f49fa108977c1bd39bb17a721721ec1cedc4e05",
+    "scope": "Replaces only ablations.cql in the bundled paper results. Original main CQL learning curves, held-out tests and robustness remain unchanged."
+  }
+}

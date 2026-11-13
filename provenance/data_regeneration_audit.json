@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "Full regenerated paper training replay, not a sampled subset",
+  "episodes": 32000,
+  "transitions": 24000000,
+  "training_winds": 160,
+  "controllers": 200,
+  "original_export": "hpc_corl_hpo25_24fits_500k_20261018/data",
+  "all_seven_npy_file_hashes_match_original_manifest": true,
+  "normalization_mean_bitwise_equal": true,
+  "normalization_scale_bitwise_equal": true,
+  "best_pd_on_regenerated_training_costs": {
+    "controller_id": 11,
+    "mean_training_cost": 66.86417377568614,
+    "top_ten_controller_ids": [11, 148, 90, 117, 147, 139, 75, 100, 89, 15],
+    "note": "Ranking recomputed from all 160 winds; sums use float64 over stored float32 rewards."
+  },
+  "historical_fingerprints": "configs/historical_replay_sha256.json",
+  "raw_episode_crosscheck": {
+    "controllers": [0, 11, 199],
+    "winds": [51000, 51029, 51139],
+    "full_horizon": 750,
+    "all_25_observation_features_actions_rewards_successors_terminals_exact": true
+  },
+  "augmentation": {
+    "protocol": "state_consistent_previous_action_v1",
+    "seed": 104852,
+    "std_data_scaled": 0.01,
+    "fixed_cached_view": true,
+    "targets_unchanged": true,
+    "same_view_used_for_bc_and_value_learning": true,
+    "rollout_noise": false
+  },
+  "runtime": {
+    "platform": "Windows",
+    "python": "3.12.14",
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "gymnasium": "1.0.0"
+  },
+  "portable_tests_passed": 7,
+  "note": "The generator retains historical gain decimal strings and pandas parsing. Unused catalogue columns were subsequently removed; all 200 parsed gain triples were rechecked for exact numerical identity. No learning was performed for this audit. Full generated arrays remain local and are excluded from the source release."
+}

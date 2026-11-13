@@ -1,0 +1,10 @@
+{
+  "algorithm": "bc",
+  "steps": 500000,
+  "checkpoint_every": 25000,
+  "config": {
+    "hidden_size": 1024,
+    "batch_size": 512,
+    "learning_rate": 0.0001
+  }
+}

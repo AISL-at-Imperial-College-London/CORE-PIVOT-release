@@ -1,0 +1,40 @@
+name: Locked reviewer setup (no training)
+on:
+  workflow_dispatch:
+jobs:
+  reviewer:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: '0.13.7'
+      - if: runner.os != 'Windows'
+        run: uv sync --locked --managed-python
+      - name: Windows wrappers without Python or uv on PATH
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:CORE_PIVOT_UV = (Get-Command uv).Source
+          $env:Path = "$env:SystemRoot\System32;$env:SystemRoot"
+          & .\setup.cmd
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\review.cmd --help
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\review.cmd train all --all-seeds --dry-run
+          exit $LASTEXITCODE
+      - run: uv run --locked python run.py --help
+      - run: uv run --locked python run.py train all --all-seeds --dry-run
+      - run: uv run --locked python -m unittest discover -s tests -p test_reviewer_runner.py -v
+      - run: uv run --locked python -m unittest discover -s tests -p test_download_checkpoints.py -v
+      - run: uv run --locked python -m unittest discover -s tests -p test_selected_identity.py -v
+      - run: uv run --locked python -m unittest discover -s tests -p test_windows_uv_discovery.py -v
+      - run: uv run --locked python -m unittest discover -s tests -p test_plot_legacy_cleanup.py -v
+      - run: uv run --locked python -m unittest discover -s tests -p test_export_tables.py -v
+      - run: uv run --locked python scripts/export_tables.py
+      - run: uv run --locked python run.py evaluate best-pd --winds 1
+      - run: uv run --locked python scripts/animate.py --preview

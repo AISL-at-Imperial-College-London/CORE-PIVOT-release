@@ -1,0 +1,16 @@
+{
+  "algorithm": "iql",
+  "steps": 500000,
+  "checkpoint_every": 10000,
+  "config": {
+    "batch_size": 256,
+    "actor_learning_rate": 0.0003,
+    "critic_learning_rate": 0.0003,
+    "value_learning_rate": 0.0003,
+    "discount": 0.99,
+    "tau": 0.005,
+    "expectile": 0.98,
+    "weight_temperature": 5.0,
+    "max_weight": 20.0
+  }
+}

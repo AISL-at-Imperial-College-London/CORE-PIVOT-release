@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "partial_diagnostic": true,
+  "batch": "new_reproduction_evaluations_only",
+  "sources": [
+    "evaluation_pd_smoke.json"
+  ],
+  "summaries": [
+    {
+      "method": "best-pd",
+      "step": null,
+      "condition": "validation_ordinary",
+      "seed_means": {
+        "None": 63.18571233774538
+      },
+      "mean": 63.18571233774538,
+      "sample_sd": null,
+      "minimum": 63.18571233774538,
+      "maximum": 63.18571233774538,
+      "variability": "across winds of one fixed PD",
+      "matched_winds": 1
+    },
+    {
+      "method": "best-pd",
+      "step": null,
+      "condition": "validation_stronger",
+      "seed_means": {
+        "None": 138.45986672200118
+      },
+      "mean": 138.45986672200118,
+      "sample_sd": null,
+      "minimum": 138.45986672200118,
+      "maximum": 138.45986672200118,
+      "variability": "across winds of one fixed PD",
+      "matched_winds": 1
+    }
+  ]
+}

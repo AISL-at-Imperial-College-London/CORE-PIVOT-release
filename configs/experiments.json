@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "paper_commit": "1827425a7880214868cb62f9bc3c03d21459c72e",
+  "paired_cql_ablation_paper_commit": "5f49fa108977c1bd39bb17a721721ec1cedc4e05",
+  "scope": "The original selected-checkpoint comparison and the ablations actually displayed in the main paper; no abandoned exploratory variants.",
+  "training": {
+    "seeds": [123, 124, 125, 126, 127],
+    "updates": 500000,
+    "discount": 0.99,
+    "target_polyak": 0.005,
+    "observation_dimension": 25,
+    "normalized_action_bounds": [-1, 1],
+    "physical_action_scale": 5,
+    "replay_transitions": 24000000,
+    "normalization": "Training-only population mean/std; std floor1e-6; frozen after fitting",
+    "cached_training_view_augmentation": "Previous-action feature slice receives fixed Gaussian noise:0.01 times training half-range, seed104852. Shared interior next-observation values. Evaluation observations are not augmented; see dataset provenance.",
+    "reward_scaling": "none",
+    "separate_bc_updates_excluded_from_learning_curve_axis": true
+  },
+  "selected": {
+    "bc": {"checkpoint": 500000, "hidden": [1024, 1024], "batch": 512, "learning_rate": 0.0001},
+    "easybcq": {"checkpoint": 480000, "critic": "qbeta", "bc_checkpoint": 500000, "bc_seed": "matched", "candidates": 100},
+    "hoflon": {"checkpoint": 310000, "critic": "qbeta", "bc_checkpoint": 500000, "bc_seed": "matched", "candidates": 100, "radius": 0.1, "iterations": 40, "ftol": 1e-8, "corrected_status9_fallback": true},
+    "qbeta": {"hidden": [1024, 1024], "batch": 512, "learning_rate": 0.0001, "backup": "single-target-critic recorded-successor action"},
+    "core-pivot": {"checkpoint": 360000, "hidden": [256, 256], "critics": 2, "batch": 256, "learning_rate": 0.00003, "lambda": 0.01, "bc_checkpoint": 500000, "bc_seed": 123, "bc_candidates": 10, "uniform_candidates": 40, "extra_candidates": ["zero", "bounded previous action"], "iterations": 40, "conservative_samples_per_proposal": 10, "conservative_temperature": 1, "backup": "target-twin minimum at recorded successor action", "corrected_status9_fallback": true},
+    "td3-bc": {"checkpoint": 290000, "hidden": [256, 256], "batch": 256, "actor_lr": 0.0003, "critic_lr": 0.0003, "alpha": 0.5, "actor_interval": 2, "target_noise": 0.2, "noise_clip": 0.5},
+    "iql": {"checkpoint": 500000, "hidden": [256, 256], "batch": 256, "learning_rate": 0.0003, "expectile": 0.98, "beta": 5, "weight_cap": 20, "actor_learning_rate_schedule": "constant", "policy_sigma": "learned state-independent"},
+    "cql": {"checkpoint": 330000, "hidden": [256, 256], "batch": 256, "actor_lr": 0.00001, "critic_lr": 0.00003, "dual_lr": 0.0001, "target_gap": 30, "dual_initial": 0.5, "conservative_weight": 1, "actor_entropy_temperature": 0.1, "entropy_in_bellman_target": false, "actor_bc_warmup": 0},
+    "best-pd": {"catalogue_id": 11, "kp": 2.9413960487898065, "kd": 1.3931211213221977, "selection": "lowest mean cost across160 ordinary training winds", "retuned_for_evaluation": false}
+  },
+  "tuning": {
+    "seeds": [123, 124],
+    "td3-bc": {"alpha": [0.5, 1, 2, 4]},
+    "iql": {"expectile": [0.90, 0.98], "beta": [3, 5, 10, 30], "crossed": true},
+    "cql": {"fixed_weight": [0.01, 0.05, 0.1, 0.5, 1], "adaptive_gap": [1, 5, 10, 30], "crossed": false},
+    "core-pivot": {"lambda": [0, 0.01, 0.05, 0.1, 0.5, 1]},
+    "easybcq": {"candidates": [1, 10, 50, 100], "evaluation_every": 25000},
+    "hoflon": {"radius": [0.05, 0.1, 0.25, 1], "candidates": 100, "bc_checkpoint": 500000},
+    "selection": "Exploratory joint inspection of ordinary/stronger validation means and seed dispersion; one common checkpoint per algorithm, not per-seed selection."
+  },
+  "evaluation": {
+    "episode_seconds": 15,
+    "dt": 0.02,
+    "transitions": 750,
+    "training_winds": 160,
+    "validation_winds": {"ordinary": 15, "stronger": 5},
+    "test_winds": {"ordinary": 15, "stronger": 5},
+    "stronger_peak_component": 1.5,
+    "robustness": {"identifiers": "20 validation identifiers, matched across all methods/seeds", "random_walk_peaks": [1.5, 2, 2.5, 3, 4], "step_peaks": [1.5, 2, 2.5, 3, 3.5, 4], "reversing_peaks": [1.5, 2, 2.5, 3, 3.5, 4], "onset_seconds": 4, "reversal_seconds": 9},
+    "original_test_episodes": 720,
+    "original_robustness_episodes": 12240,
+    "trajectory_test_reruns_pooled_with_original": false,
+    "aggregation": "Average episode costs over winds within a seed, then mean/min/max/sample-SD(ddof=1) across five seed means. Fixed-PD variability is across winds."
+  },
+  "main_ablation_panels": {
+    "a_radius": {"seeds": [123, 124], "critic_checkpoint": 310000, "bc_checkpoint": 500000, "candidates": 100, "radius": [0.05, 0.1, 0.25, 1, null], "null_means": "box-only, no radius constraint", "iterations": 40, "no_training": true},
+    "b_conservatism": {"seeds": [123, 124], "lambda": [0, 0.01], "updates": 500000, "evaluation_every": 10000},
+    "c_frozen_iql_extraction": {"seeds": [123, 124, 125, 126, 127], "frozen_critic_checkpoint": 500000, "critic": "IQL frozen target-twin minimum", "frozen_value": true, "methods": ["AWR", "DDPG+BC"], "fixed_sigma_both": 1, "awr_beta": 5, "weight_cap": 20, "ddpg_bc_weight": 1, "updates": 50000, "evaluation_every": 1000, "batch": 256, "learning_rate": 0.0003, "ddpg_bc_weight_tuning": [0.1, 0.5, 1]},
+    "d_cql_backup": {"seeds": [123, 124, 125, 126, 127], "variants": ["paired actor-backup CQL", "SARSA-CQL"], "updates": 500000, "evaluation_every": 10000, "fully_paired": true, "actor_entropy_temperature": 0.1, "entropy_in_bellman_target": false, "conservative_base_weight": 1, "initial_dual_multiplier": 0.5, "adaptive_gap": 30, "deployment": "trained actor", "per_update_torch_seed": "seed*1000003+step", "replay_sampler_seed": "seed+10000", "validation_tasks": 510, "validation_episodes": 10200, "completed_followup": "Actor-backup controls for125-127 are matched to the existing SARSA initializations and runtimes. Main selected CQL test and robustness results are unchanged."}
+  },
+  "not_main_results": ["validation-selected BC variants", "BC50k variants", "per-seed checkpoint reselection", "alternative CORE candidate budgets", "solver-library comparison", "sinusoidal sweeps", "frozen-IQL endpoint robustness", "pending five-seed radius extension"],
+  "code_provenance": {"corl_commit": "6afec90484bbf47dee05fdf525e26a3ebe028e9b", "note": "Adapted learner kernels, not upstreamD4RL entry points. CQL actor2hiddenlayers, configurableIQLcap20, tracking-specific interface and replay."}
+}

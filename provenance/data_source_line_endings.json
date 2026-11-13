@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-05",
+  "scope": "Canonical environment/replay/config files mechanically copied into the release",
+  "note": "CRLF-to-LF normalization only; no equations or numerical values changed. Full replay and normalization parity were established independently.",
+  "files": [
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "30034dee988ff295f0aad206186ce12ec20029eef5b7670282f01d4374eb6134",
+      "path": "environments/reference.py",
+      "historical_byte_sha256": "30034dee988ff295f0aad206186ce12ec20029eef5b7670282f01d4374eb6134"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "c1b7016a5317df3609e043c269289755dac1a8aed07f58d5bc64b77af67ec472",
+      "path": "environments/wind.py",
+      "historical_byte_sha256": "c1b7016a5317df3609e043c269289755dac1a8aed07f58d5bc64b77af67ec472"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "d574b8db5410cc6adb5ab2d8216636fc06e66f59d8cb09d78b35d3bff02bfaac",
+      "path": "environments/drone_env.py",
+      "historical_byte_sha256": "efb54d437e4c6b7f5d364d179787776ab7e2e8fdcdbd7f950a4193692b8ba549"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "604797ddb41d962355ff24b1b323ba7133cf63c24e829ab59c483ed8784a8cd4",
+      "path": "environments/action_space.py",
+      "historical_byte_sha256": "604797ddb41d962355ff24b1b323ba7133cf63c24e829ab59c483ed8784a8cd4"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "7dc419f996dbf3f1791169ae7059007efa43dfea0d40f349b14f5d1c7f16c9b2",
+      "path": "environments/evaluation.py",
+      "historical_byte_sha256": "7dc419f996dbf3f1791169ae7059007efa43dfea0d40f349b14f5d1c7f16c9b2"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "90cad9a04402e0322795b33952be5a8c07b42c1a79526e4e2ba6e9515b8b2b94",
+      "path": "datasets/replay.py",
+      "historical_byte_sha256": "90cad9a04402e0322795b33952be5a8c07b42c1a79526e4e2ba6e9515b8b2b94"
+    },
+    {
+      "only_crlf_to_lf": true,
+      "release_lf_sha256": "b7716d324f93b3926fff1227774a37a2793143ce5f3b936b5c3624eca5f7f274",
+      "path": "configs/dataset_split.json",
+      "historical_byte_sha256": "b7716d324f93b3926fff1227774a37a2793143ce5f3b936b5c3624eca5f7f274"
+    }
+  ]
+}

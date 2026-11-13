@@ -1,0 +1,55 @@
+{
+  "repository": "https://github.com/tinkoff-ai/CORL",
+  "revision": "6afec90484bbf47dee05fdf525e26a3ebe028e9b",
+  "extraction": "Selected original function/class source; no D4RL, Gym, WandB or runner imports.",
+  "files": {
+    "td3_bc": {
+      "url": "https://raw.githubusercontent.com/tinkoff-ai/CORL/6afec90484bbf47dee05fdf525e26a3ebe028e9b/algorithms/offline/td3_bc.py",
+      "upstream_sha256": "8fbcc24a58dedf81cac1fe5aa0f10a309dc6e7c705745026a3d3735e31354452",
+      "extracted_sha256": "358c1d2264fe93ad6bb5b7e3582c003b92dbd2f4f680b8c519ce722376ad3608",
+      "definitions": [
+        "Actor",
+        "Critic",
+        "TD3_BC",
+        "soft_update"
+      ],
+      "changes": []
+    },
+    "iql": {
+      "url": "https://raw.githubusercontent.com/tinkoff-ai/CORL/6afec90484bbf47dee05fdf525e26a3ebe028e9b/algorithms/offline/iql.py",
+      "upstream_sha256": "87d98495da91c2cd3851a32d9bfb1c80e1f796123d704be096b1822d930baace",
+      "extracted_sha256": "9fedb6d51195b7a488bfd5f994d3c4408b78e1b72307f1f9ee39df885172c4dd",
+      "definitions": [
+        "GaussianPolicy",
+        "ImplicitQLearning",
+        "MLP",
+        "Squeeze",
+        "TwinQ",
+        "ValueFunction",
+        "asymmetric_l2_loss",
+        "soft_update"
+      ],
+      "changes": [
+        "Expose advantage-weight cap via trainer.max_weight; default CORL cap remains 100."
+      ]
+    },
+    "cql": {
+      "url": "https://raw.githubusercontent.com/tinkoff-ai/CORL/6afec90484bbf47dee05fdf525e26a3ebe028e9b/algorithms/offline/cql.py",
+      "upstream_sha256": "76e0db2667c7f1a51c77840fb2aeaa97fcefa165fe1556e54a5981d925ca3b81",
+      "extracted_sha256": "45457e3dbb62d3c104e6b0f8a38151af063f81cac50049b79f6086651a19dc7d",
+      "definitions": [
+        "ContinuousCQL",
+        "FullyConnectedQFunction",
+        "ReparameterizedTanhGaussian",
+        "Scalar",
+        "TanhGaussianPolicy",
+        "extend_and_repeat",
+        "init_module_weights",
+        "soft_update"
+      ],
+      "changes": [
+        "Actor has two 256-unit hidden layers instead of three, matching selected historical CORL run."
+      ]
+    }
+  }
+}

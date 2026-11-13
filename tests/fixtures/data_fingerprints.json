@@ -1,0 +1,35 @@
+{
+  "description": "Clean full-horizon episodes, controllers 0/11/199. Every field was checked against historical raw NPZ episodes before recording these byte fingerprints. SHA256 covers C-contiguous array bytes, not NPZ compression.",
+  "episodes": [
+    {
+      "seed": 51000, "stronger": false,
+      "sha256": {
+        "observations": "da5885b172b7d64c394465cfc5acc4fb96830b54edf2c3a658c60a2abd5fcb99",
+        "next_observations": "1d9875f745eb53f95e58d73278bf28c0cefa1b64e2f29b5d55a2020dd2db0e13",
+        "actions": "d97d8fd3b4303339eb48c4f98b1a73a875ac7a8a7a547fbb7b680fb1e64805f7",
+        "next_actions": "9c95b5af9b4a7b193e60e821d670f0f0e6a67cd894c3e2c837e0368aca5ba443",
+        "rewards": "1f7e5183987128c775d4864afccaaf3cdbc968f7cc5189e583597f63c009bd8d"
+      }
+    },
+    {
+      "seed": 51029, "stronger": false,
+      "sha256": {
+        "observations": "84010b9258ed31ef8058f03991fddc5418d2873a092e250f41756b41a22bb04a",
+        "next_observations": "bc98f49fb47298e6e41a2ab067fefc49149cafd7941f8a1d41863574695fad57",
+        "actions": "160aea3e1c653cbb0c2ec6899c553e538b748d5037982ca1626c8d2f3eabb31b",
+        "next_actions": "3ef3e1d89ae81b7a7750e6c0a4778b1689aa412b4a2b3f9de1291a294dc9c93e",
+        "rewards": "1da989bb4c7ba3c3ecba941b3e366c5ed4b70563ebb9898a6d0db005e32f10dd"
+      }
+    },
+    {
+      "seed": 51139, "stronger": true,
+      "sha256": {
+        "observations": "f6906970de753d67505265bd792af5aa7862231600a5451c8d8fe90969716d49",
+        "next_observations": "17a07fe5157da2f157240da041b3e224d68ba95fa3c81bb5982724b7ed866a75",
+        "actions": "c948a91e54616a3af4cdc51ed424a8ab233dd087e547e9d4c0c36e49e0a2b4bf",
+        "next_actions": "ed949eef94c863b6bd43e3b19b3f4dcf19ebc0a0dab55f9f3ea879e113986fb9",
+        "rewards": "d7d3b8e91f13748b9c7f39341f4df7a5c919e5592b4dc1b1fdd6a4cd2be7d9b3"
+      }
+    }
+  ]
+}

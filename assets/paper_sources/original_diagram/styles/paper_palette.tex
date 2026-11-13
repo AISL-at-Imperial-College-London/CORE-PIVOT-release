@@ -1,0 +1,71 @@
+% Central colour palette shared by the paper and all active figures.
+% Method colours identify methods, not dataset conditions or phases.
+\def\PaperPaletteLoaded{1}
+
+% Paper-wide method and neutral colours.
+\definecolor{paperCorePivot}{HTML}{008577}
+\definecolor{paperCorePivotLight}{HTML}{E5F3EF}
+\definecolor{paperIQL}{HTML}{3F6C8E}
+\definecolor{paperTD3BC}{HTML}{8A681F}
+\definecolor{paperCalQL}{HTML}{397C70}
+\definecolor{paperBC}{HTML}{7654A3}
+\definecolor{paperBCLight}{HTML}{F0EBF7}
+\definecolor{paperPD}{HTML}{303030}
+\definecolor{paperNeutralLight}{HTML}{F7F8F9}
+\definecolor{paperReference}{HTML}{183B65}
+\definecolor{paperInk}{HTML}{202B35}
+\definecolor{paperGray}{HTML}{7A8286}
+\definecolor{paperBackground}{HTML}{F9FAFB}
+\definecolor{paperGrid}{HTML}{BFC3C6}
+\definecolor{paperSummary}{HTML}{565656}
+\definecolor{paperBand}{HTML}{777777}
+\definecolor{paperSilver}{HTML}{AEB4BC}
+\definecolor{paperSilverLight}{HTML}{EDF0F3}
+\definecolor{paperSilverEdge}{HTML}{626A73}
+\definecolor{paperPropellerLight}{HTML}{E4EEF7}
+\definecolor{paperPropellerEdge}{HTML}{3974A1}
+
+% Semantic aliases used by the framework overview.
+\colorlet{hmBehavior}{paperBC}%
+\colorlet{hmInk}{paperInk}%
+\colorlet{hmGray}{paperGray}%
+\colorlet{hmPaper}{paperBackground}%
+\colorlet{overviewPolicyEdge}{paperCorePivot}%
+\colorlet{overviewPolicyFill}{paperCorePivot!25}%
+\colorlet{overviewActionEdge}{paperInk!70}%
+\colorlet{overviewActionOuterFill}{paperGray!20}%
+\colorlet{overviewDPEdge}{paperInk}%
+\colorlet{overviewDPFill}{paperPropellerLight}%
+\colorlet{droneAccent}{paperSilver}%
+\colorlet{droneLight}{paperSilverLight}%
+
+% Dataset-construction figure colours.
+\definecolor{hdBlue}{RGB}{0,114,178}
+\definecolor{hdPurple}{RGB}{145,94,155}
+\definecolor{hdGood}{RGB}{0,130,115}
+\definecolor{hdMedium}{RGB}{216,155,38}
+\definecolor{hdBad}{RGB}{185,80,77}
+\definecolor{hdInk}{RGB}{45,52,64}
+\definecolor{hdPaper}{RGB}{248,250,252}
+
+% Legacy illustration names retained for compatibility with optional figures.
+\definecolor{policyedge}{RGB}{203,55,111}
+\definecolor{policycoreedge}{RGB}{215,50,32}
+\definecolor{policyfill}{RGB}{233,198,213}
+\definecolor{policycorefill}{RGB}{236,196,199}
+\definecolor{actionedge}{RGB}{61,77,150}
+\definecolor{actionfill}{RGB}{159,154,199}
+\definecolor{actionouterfill}{RGB}{159,208,240}
+\definecolor{actoredge}{RGB}{155,77,152}
+\definecolor{dpedge}{RGB}{7,10,28}
+\definecolor{dpfill}{RGB}{227,228,233}
+\definecolor{hmBlue}{RGB}{0,114,178}%
+
+% Shared critic-landscape colour map.
+\pgfplotsset{
+  colormap={referencecriticmap}{
+    color(0cm)=(paperCorePivot!5)
+    color(1cm)=(paperCorePivot!22)
+    color(2cm)=(paperCorePivot!65)
+  }
+}

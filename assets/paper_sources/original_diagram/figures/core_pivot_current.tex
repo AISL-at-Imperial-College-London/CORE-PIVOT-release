@@ -1,0 +1,653 @@
+% Three-panel \method overview, deployment-time action improvement, and task.
+\ifdefined\PaperPaletteLoaded\else\input{styles/paper_palette}\fi%
+\begingroup
+%
+\begin{tikzpicture}[
+  x=1cm,
+  y=0.90cm,
+  >=Stealth,
+  font=\sffamily\scriptsize,
+  panel/.style={rounded corners=4pt,draw=none,fill=none,
+    line width=1.15pt},
+  criticdetail/.style={panel,draw=none,fill=none},
+  taskdetail/.style={panel,draw=none,fill=none},
+  box/.style={rounded corners=2.5pt,draw=black,fill=white,
+    line width=0.70pt,align=center,inner sep=4pt},
+  databox/.style={box,draw=black,fill=paperNeutralLight},
+  corebox/.style={box,draw=black,line width=0.82pt,fill=paperCorePivotLight},
+  behaviorbox/.style={box,draw=black,densely dashed,fill=paperBCLight},
+  plantbox/.style={box,draw=black,fill=overviewDPFill},
+  paneltitle/.style={font=\sffamily\bfseries\small,text=hmInk,
+    anchor=west},
+  stage/.style={font=\sffamily\bfseries\scriptsize,text=hmInk!84,
+    align=center},
+  annotation/.style={draw=none,fill=none,inner sep=1pt},
+  note/.style={annotation,font=\sffamily\fontsize{6.0}{6.7}\selectfont,
+    text=hmInk!72,align=center},
+  flow/.style={-{Stealth[length=5pt,width=5.4pt]},draw=hmInk,
+    line width=0.78pt,rounded corners=2pt},
+  baseline/.style={-{Stealth[length=4.2pt,width=4.6pt]},draw=hmInk!45,
+    line width=0.50pt,densely dashed,rounded corners=2pt},
+  criticflow/.style={-{Stealth[length=5pt,width=5.4pt]},draw=paperCorePivot,
+    line width=0.95pt,rounded corners=2pt},
+  supportflow/.style={-{Stealth[length=5pt,width=5.4pt]},draw=hmBehavior,
+    densely dashed,line width=0.90pt,rounded corners=2pt},
+  mainflow/.style={-{Stealth[length=5.3pt,width=5.6pt]},draw=paperCorePivot,
+    line width=1.20pt,rounded corners=2pt},
+  feedback/.style={-{Stealth[length=4.5pt,width=4.9pt]},draw=hmInk,
+    densely dotted,line width=0.90pt,rounded corners=2pt,
+    preaction={draw=white,line width=1.8pt}},
+  axis/.style={-{Stealth[length=4.2pt,width=4.7pt]},draw=black!65,
+    line width=0.68pt},
+  actorpath/.style={-{Stealth[length=4.8pt,width=5.2pt]},draw=paperCorePivot,
+    line width=1.00pt,rounded corners=2pt},
+  behaviorpath/.style={-{Stealth[length=4.8pt,width=5.2pt]},draw=hmBehavior,
+    densely dashed,
+    line width=1.00pt,rounded corners=2pt}
+]
+
+% ===========================================================================
+% (a) Explicit offline and online phases.
+% ===========================================================================
+% Reflowed layout: explicit positions and content-sized blocks, no stretching.
+% Lift the lower model row; preserve node sizes and every arrow connection.
+\ifdefined\CompactMethodPanels\else
+\node[panel,
+  minimum width=16.00cm,minimum height=5.895cm]
+  (overviewPanel) at (8.00,8.225) {};
+
+% Subtle phase regions, separated by a deployment boundary.
+\path[rounded corners=3pt,fill=white,draw=none]
+  (0.18,5.13) rectangle (8.10,10.28);
+\path[rounded corners=3pt,fill=white,draw=none]
+  (8.40,5.13) rectangle (15.82,10.28);
+\draw[black!45,densely dashed,line width=0.72pt]
+  (8.25,5.23) -- (8.25,10.30);
+
+\ifdefined\HideInsetTitles\else
+\node[paneltitle,text=black]
+  at (0.22,11.23) {(a) \method{} framework overview};
+\fi
+\node[font=\sffamily\bfseries\small,text=paperCorePivot!80!black]
+  at (4.10,10.78) {OFFLINE PHASE};
+\node[note,font=\sffamily\fontsize{5.8}{6.3}\selectfont]
+  at (4.10,10.43) {fit from recorded behaviour; regularise conservatively};
+\node[font=\sffamily\bfseries\small,text=paperCorePivot!80!black]
+  at (12.10,10.78) {DEPLOYMENT PHASE};
+\node[note,font=\sffamily\fontsize{5.8}{6.3}\selectfont]
+  at (12.10,10.43) {frozen models; repeat at each control step};
+
+% ---------------------------------------------------------------------------
+% Offline phase: fixed data, preprocessing, and model learning.
+% ---------------------------------------------------------------------------
+\node[databox,draw=black,line width=0.82pt,
+  minimum width=2.10cm,minimum height=1.45cm,
+  text width=1.84cm,font=\sffamily\fontsize{7.0}{8.2}\selectfont]
+  (dataset) at (1.25,8.30)
+  {\textbf{Offline dataset $\mathcal D$}\\[2pt]
+   {\fontsize{6.2}{7.2}\selectfont $(o,a,r,o',a'_{\mathcal D},d)$}};
+\node[note,font=\sffamily\fontsize{6.2}{7.2}\selectfont,
+  text width=2.05cm] at (1.25,6.85)
+  {fixed data ---\\no online exploration};
+\node[annotation,font=\sffamily\fontsize{6.2}{7.2}\selectfont,
+  text=hmInk!76]
+  at (1.25,7.30) {standardise features};
+
+% Extend the dataset hand-off and use its endpoint as the common split point.
+\coordinate (offlineBranch) at (2.75,8.30);
+\draw[flow,draw=black,line width=0.84pt]
+  (dataset.east) -- (offlineBranch);
+
+\node[corebox,minimum width=2.10cm,minimum height=1.25cm,
+  text width=1.89cm,inner sep=3pt,
+  font=\sffamily\fontsize{6.7}{8.0}\selectfont]
+  (calqlTrain) at (4.05,9.20)
+  {\textbf{Conservative\\behaviour-return fitting}\\[3pt]SARSA + $\mathcal R_{\mathrm{CQL}}$};
+
+\node[corebox,minimum width=2.60cm,minimum height=1.25cm,
+  text width=2.37cm,inner sep=3pt,
+  font=\sffamily\fontsize{6.8}{8.0}\selectfont]
+  (criticModel) at (6.85,9.20)
+  {\textbf{\mbox{Conservative critic}}\\[2pt]
+   Learned value landscape\\[2pt]frozen after fitting};
+
+
+\node[behaviorbox,minimum width=3.00cm,minimum height=1.20cm,
+  text width=2.72cm,inner sep=4pt,
+  font=\sffamily\fontsize{7.0}{8.2}\selectfont]
+  (behavior) at (4.65,6.45)
+  {\textbf{Conditional behavior\\model}\\[3pt]
+   fit once; freeze};
+
+\draw[flow] (offlineBranch) |- (calqlTrain.west);
+\draw[supportflow] (offlineBranch) |- (behavior.west);
+
+% BC proposals regularise the recorded-behaviour return fit.
+\draw[supportflow] (behavior.north)--(4.65,7.50)-|(calqlTrain.south);
+\node[note,text width=2.1cm] at (5.90,7.55) {BC + uniform\\conservative samples};
+\draw[criticflow] (calqlTrain.east) -- (criticModel.west);
+
+% Explicit offline-to-online deployment interface.
+\node[box,draw=black,fill=white,line width=0.72pt,
+  rounded corners=2pt,inner sep=4pt,
+  font=\sffamily\fontsize{6.7}{8.0}\selectfont,
+  text=hmInk!82,align=center,minimum width=1.85cm,
+  minimum height=1.95cm,text width=1.59cm]
+  (frozenModels) at (8.10,6.50)
+  {\textbf{Frozen models}\\[1pt]
+   at deployment\\[4pt]
+   \textcolor{paperCorePivot!80!black}{Critics}\\[3pt]
+   \textcolor{hmBehavior}{BC model}};
+
+% Drop below the critic, turn right, then turn down into the frozen models.
+\draw[criticflow,line width=0.74pt]
+  (criticModel.south) -- ++(0,-0.55) -| (frozenModels.north);
+\draw[supportflow,line width=0.72pt]
+  (behavior.east) -- (frozenModels.west |- behavior.center);
+
+% ---------------------------------------------------------------------------
+% Online phase: observe, optimize, act, and repeat in closed loop.
+% ---------------------------------------------------------------------------
+\node[databox,minimum width=0.74cm,minimum height=0.52cm]
+  (observation) at (8.70,8.15) {$o_t$};
+
+\node[corebox,draw=black,line width=1.08pt,
+  minimum width=2.40cm,minimum height=1.85cm,text width=2.14cm,
+  inner sep=4pt,font=\sffamily\fontsize{7.0}{8.3}\selectfont]
+  (\method) at (10.85,8.15)
+  {\textbf{\method}\\[1pt]
+   Sample candidates\\[3pt]
+   Rank by critic\\[3pt]
+   Refine the best\\[3pt]
+   Apply $u_t=u_{\max}a^\star$};
+
+\node[circle,draw=black,fill=paperCorePivot!15,line width=1.18pt,
+  minimum size=0.76cm,inner sep=1pt,font=\sffamily\bfseries\small]
+  (optimalAction) at (12.95,8.15) {$u_t$};
+\node[plantbox,minimum width=1.65cm,minimum height=1.65cm]
+  (overviewPlant) at (14.65,8.15) {};
+\node[annotation,font=\sffamily\bfseries\fontsize{6.7}{7.8}\selectfont,
+  text=black,align=center]
+  at ([yshift=-0.25cm]overviewPlant.north) {Drone task};
+
+% Compact reference path and quadrotor glyph inside the plant block.
+\draw[paperReference,densely dashed,line width=0.46pt]
+  (13.85,7.82) .. controls (14.12,8.54) and (14.80,7.66) ..
+  (15.40,8.45);
+\begin{scope}[shift={(14.65,8.12)},rotate=16,scale=1.30]
+  \draw[paperSilverEdge,line width=0.82pt] (-0.30,-0.19) -- (0.30,0.19);
+  \draw[paperSilverEdge,line width=0.82pt] (-0.30,0.19) -- (0.30,-0.19);
+  \shade[inner color=paperSilverLight,outer color=paperSilver,
+    draw=paperSilverEdge] (0,0) circle[radius=0.088];
+  \foreach \x/\y in {-0.30/-0.19,0.30/0.19,-0.30/0.19,0.30/-0.19} {
+    \draw[paperPropellerEdge,fill=paperPropellerLight,line width=0.55pt]
+      (\x,\y) ellipse[x radius=0.135,y radius=0.062];
+  }
+\end{scope}
+\node[note,text=hmInk!78,font=\sffamily\fontsize{5.3}{6.0}\selectfont]
+  at (14.65,7.47) {disturbed tracking};
+
+% One straight forward signal path: observation, controller, action, and plant.
+\draw[flow] (observation.east) -- (\method.west);
+\draw[mainflow] (\method.east) -- (optimalAction.west);
+\draw[mainflow] (optimalAction.east) -- (overviewPlant.west);
+
+% The boundary bundle collects the learned outputs without long cross-panel
+% routes. Three short local connections expose their online roles.
+\draw[criticflow]
+  (frozenModels.east) -| (\method.south);
+\draw[supportflow]
+  ([yshift=-0.35cm]frozenModels.east) -|
+  ([xshift=0.82cm]\method.south);
+
+% Classic feedback rail, separated vertically from the actor bypass.
+\draw[feedback] (overviewPlant.east) -- (15.90,8.15) --
+  (15.90,10.25) --
+  node[pos=0.10,below,note] {$o_{t+1}$}
+  (8.70,10.25) -- (observation.north);
+
+% ===========================================================================
+% (b) Deployment-time action improvement on the Figure 5 landscape.
+% ===========================================================================
+\fi
+% Rigidly lift both lower panels: artwork, points, labels and arrows unchanged.
+\ifdefined\CompactFullWidth
+\begin{scope}[shift={(0,1.661111)}]
+\else
+\begin{scope}[shift={(0,0.75)}]
+\fi
+% Equal lower-panel dimensions; extra height accommodates proportional artwork.
+\ifdefined\CompactFullWidth
+\node[criticdetail,minimum width=7.825cm,minimum height=3.40cm]
+  (landscapePanel) at (3.9125,1.16) {};
+\node[paneltitle,anchor=center,text=black] at (3.9125,2.82)
+  {(b) Deployment-time action improvement};
+\begin{scope}[shift={(3.9125,1.16)},scale=.65,transform shape]
+\begin{scope}[shift={(-3.9125,-1.16)}]
+\else
+\node[criticdetail,minimum width=7.825cm,minimum height=5.04cm]
+  (landscapePanel) at (3.9125,1.16) {};
+\fi
+\ifdefined\CompactFullWidth\else
+\ifdefined\HideInsetTitles\else
+\node[paneltitle,anchor=center,text=black]
+  at (3.9125,3.72)
+  {(\ifdefined\CompactMethodPanels a\else b\fi) Deployment-time action improvement};
+\fi
+\fi
+% The caption identifies the surface and paths as schematic, not measured iterates.
+\begin{scope}
+% Plot the analytic critic directly over the rectangular action domain.
+\tikzset{declare function={
+  criticValue(\u,\v)=1.15*exp(-((\u-0.85)^2+(\v-0.55)^2)/0.5)
+    +0.42*exp(-((\u+0.9)^2+(\v+0.75)^2)/0.38)
+    -0.08*((\u)^2+(\v)^2);
+}}
+\begin{axis}[
+  % Centre the projected axis box in the space below the legend.
+  at={(3.9125cm,0.90cm)},
+  anchor=center,
+  width=7.60cm,
+  height=5.04cm,
+  view={55}{37},
+  domain=-1.5:1.5,
+  y domain=-1.5:1.5,
+  % Fine Cartesian sampling reduces visible segments along the silhouette.
+  % The analytic function and rectangular domain remain unchanged.
+  samples=31,
+  samples y=31,
+  xmin=-1.5,xmax=1.5,
+  ymin=-1.5,ymax=1.5,
+  zmin=-0.35,zmax=1.18,
+  % Shared colour limits keep the surface and its boundary stroke matched.
+  point meta min=-0.36,
+  point meta max=1.07076,
+  xlabel={$u_1$},
+  ylabel={$u_2$},
+  xlabel style={font=\sffamily\scriptsize,inner sep=1pt},
+  ylabel style={font=\sffamily\scriptsize,inner sep=1pt},
+  tick label style={font=\sffamily\fontsize{5.4}{6.0}\selectfont,
+    text=hmInk!55},
+  % Unlabelled rear-axis ticks can protrude above the surface like spikes.
+  xtick=\empty,
+  ytick=\empty,
+  ztick=\empty,
+  grid=none,
+  axis line style={draw=black,line width=0.46pt},
+  tick style={draw=black,line width=0.35pt},
+  axis background/.style={fill=white},
+  % Colour map is defined centrally in styles/paper_palette.tex.
+  colormap name=referencecriticmap,
+  legend style={at={(0.02,0.98)},anchor=north west,
+    font=\sffamily\fontsize{5.8}{6.4}\selectfont,
+    draw=none,fill=none,inner sep=1pt},
+  clip=false
+]
+\addplot3[
+  surf,
+  shader=interp,
+  z buffer=sort,
+  opacity=0.66,
+  draw=none,
+  forget plot
+] {criticValue(x,y)};
+
+% Outline only the two exposed front boundaries; rear boundaries remain
+% hidden by the surface. Each short stroke uses the same Q-to-colour map.
+\pgfplotsextra{
+  \begin{scope}[/pgf/fpu=false]
+    \foreach \edge in {0,1} {
+      \foreach \i in {0,...,159} {
+        \pgfmathsetmacro{\edgeA}{-1.5+3*\i/160}
+        \pgfmathsetmacro{\edgeB}{-1.5+3*(\i+1)/160}
+        \ifnum\edge=0
+          \pgfmathsetmacro{\edgeZA}{criticValue(\edgeA,-1.5)}
+          \pgfmathsetmacro{\edgeZB}{criticValue(\edgeB,-1.5)}
+        \else
+          \pgfmathsetmacro{\edgeZA}{criticValue(1.5,\edgeA)}
+          \pgfmathsetmacro{\edgeZB}{criticValue(1.5,\edgeB)}
+        \fi
+        \pgfmathsetmacro{\edgeMeta}{1000*((\edgeZA+\edgeZB)/2+0.36)/1.43076}
+        \pgfplotscolormapaccess[0:1000]{\edgeMeta}{referencecriticmap}
+        \definecolor{criticBoundaryColour}{rgb}{\pgfmathresult}
+        \ifnum\edge=0
+          \draw[criticBoundaryColour,opacity=0.66,line width=0.28pt,line cap=round]
+            (axis cs:\edgeA,-1.5,\edgeZA) -- (axis cs:\edgeB,-1.5,\edgeZB);
+        \else
+          \draw[criticBoundaryColour,opacity=0.66,line width=0.28pt,line cap=round]
+            (axis cs:1.5,\edgeA,\edgeZA) -- (axis cs:1.5,\edgeB,\edgeZB);
+        \fi
+      }
+    }
+  \end{scope}
+}
+
+\addplot3[
+  only marks,
+  mark=*,
+  mark size=2.05pt,
+  draw=black,
+  fill=white,
+  line width=0.65pt,
+  forget plot
+] coordinates {
+  (-1.20000,-1.15000,-0.00346)
+  (-1.25000,0.65000,-0.15688)
+  (-0.95000,0.05000,0.00611)
+  (-0.50000,1.15000,-0.11116)
+  (-0.20000,-1.10000,-0.01565)
+  (0.20000,-0.40000,0.07785)
+  (0.50000,-1.20000,-0.13181)
+  (1.20000,-0.70000,-0.11485)
+  (1.30000,0.15000,0.41997)
+  (1.15000,1.15000,0.25596)
+  (0.20000,0.85000,0.35164)
+  (0.32000,0.22000,0.51602)
+};
+\addplot3[
+  only marks,
+  mark=triangle*,
+  mark size=3.2pt,
+  draw=paperBC,
+  fill=paperBC!20,
+  forget plot
+] coordinates {
+  (-0.72000,-0.63000,0.29862)
+  (-0.30000,0.50000,0.05672)
+  (-0.40000,-0.65000,0.16812)
+  (-0.80000,-1.05000,0.18345)
+};
+
+\draw[
+  draw=paperCorePivot!85!black,
+  line width=1.45pt,
+  postaction={decorate},
+  decoration={markings,mark=at position 0.5 with
+    {\arrow{Stealth[length=2.3mm,width=1.6mm]}}}
+]
+  (axis cs:0.32000,0.22000,0.51602) --
+  (axis cs:0.44000,0.30000,0.70262) --
+  (axis cs:0.56000,0.37000,0.87499) --
+  (axis cs:0.67000,0.44000,1.00069) --
+  (axis cs:0.76000,0.49000,1.05799) --
+  (axis cs:0.82136,0.53147,1.07076);
+\addplot3[
+  only marks,
+  mark=diamond*,
+  mark size=5.0pt,
+  draw=overviewPolicyEdge,
+  fill=overviewPolicyFill,
+  line width=0.85pt,
+  forget plot
+] coordinates {(0.32000,0.22000,0.51602)};
+% Keep the original uniform-seed circle visible inside its selection diamond.
+\addplot3[
+  only marks,
+  mark=*,
+  mark size=2.05pt,
+  draw=black,
+  fill=white,
+  line width=0.65pt,
+  forget plot
+] coordinates {(0.32000,0.22000,0.51602)};
+\addplot3[
+  only marks,
+  mark=star,
+  mark size=3.2pt,
+  draw=paperCorePivot!85!black,
+  fill=paperCorePivot!85!black,
+  forget plot
+] coordinates {(0.82136,0.53147,1.07076)};
+\node[annotation,anchor=east,font=\sffamily\fontsize{5.8}{6.5}\selectfont,
+  text=paperBC,fill=none,text opacity=1]
+  at ([xshift=-4pt]axis cs:-0.72,-0.63,0.29862) {BC sample};
+\node[annotation,anchor=west,font=\sffamily\fontsize{5.8}{6.5}\selectfont,
+  text=overviewPolicyEdge,fill=none,text opacity=1]
+  at ([xshift=14pt,yshift=8pt]axis cs:0.32,0.22,0.51602) {highest-ranked seed};
+
+\end{axis}
+\end{scope}
+\ifdefined\CompactFullWidth\else
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=hmInk] at (0.65,3.28)
+  {$\circ$\; other candidates};
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=paperBC] at (2.75,3.28)
+  {$\triangle$\; BC sample};
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=paperCorePivot] at (4.95,3.28)
+  {$\rightarrow$\; selected refinement};
+\fi
+\node[annotation,font=\sffamily\fontsize{5.7}{6.2}\selectfont,
+  text=hmInk!72,rotate=90]
+  at (0.25,0.95) {$\widehat Q(o_t,u)$};
+\ifdefined\CompactFullWidth\else
+\node[annotation,font=\sffamily\fontsize{6.4}{7.4}\selectfont,
+  text=hmInk!85,align=center] at (3.9125,-1.30)
+  {Rank seeds by $Q$; refine only the highest-ranked seed};
+\fi
+
+% ===========================================================================
+% (c) Physical closed-loop control context.
+% ===========================================================================
+\ifdefined\CompactFullWidth
+\end{scope}
+\end{scope}
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=hmInk] at (.45,2.38) {$\circ$\; other candidates};
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=paperBC] at (2.65,2.38) {$\triangle$\; BC sample};
+\node[annotation,anchor=west,font=\sffamily\fontsize{6.0}{7.0}\selectfont,
+  text=paperCorePivot] at (4.85,2.38) {$\rightarrow$\; selected refinement};
+\node[annotation,font=\sffamily\fontsize{6.4}{7.4}\selectfont,
+  text=hmInk!85,align=center] at (3.9125,-.44)
+  {Rank seeds by $Q$; refine only the highest-ranked seed};
+\node[taskdetail,minimum width=7.825cm,minimum height=3.40cm]
+  (taskPanel) at (12.0875,1.16) {};
+\node[paneltitle,anchor=center,text=black] at (12.0875,2.82)
+  {(c) Drone control task};
+\begin{scope}[shift={(12.0875,1.16)},scale=.65,transform shape]
+\begin{scope}[shift={(-12.0875,-1.16)}]
+\else
+\node[taskdetail,minimum width=7.825cm,minimum height=5.04cm]
+  (taskPanel) at (12.0875,1.16) {};
+\fi
+\ifdefined\CompactFullWidth\else
+\ifdefined\HideInsetTitles\else
+\node[paneltitle,anchor=center,text=black]
+  at (12.0875,3.72) {(\ifdefined\CompactMethodPanels b\else c\fi) Drone control task};
+\fi
+\fi
+
+% Compact adaptation of Figure 3: projected tracking geometry, smoothed
+% waypoint path, persistent side wind, and the detailed racing quadrotor.
+% Uniform scaling preserves the reference geometry and drone aspect ratio.
+% Centre the complete projected illustration, including its axis labels.
+\begin{scope}[shift={(6.15,-1.14)},scale=0.90,transform shape]
+  % Projected coordinate frame and ground-plane waypoint projection.
+  \fill[overviewDPFill!35] (2.80,0.35) -- (9.00,0.35) -- (9.75,1.60) --
+    (3.55,1.60) -- cycle;
+  \foreach \x in {2.80,3.80,...,8.80} {
+    \draw[very thin,overviewDPEdge!7] (\x,0.35) -- ++(0.75,1.25);
+  }
+  \foreach \s in {0.00,0.25,0.50,0.75,1.00} {
+    \draw[very thin,overviewDPEdge!7]
+      ({2.80+0.75*\s},{0.35+1.25*\s}) --
+      ({9.00+0.75*\s},{0.35+1.25*\s});
+  }
+  \draw[-{Stealth[length=5pt,width=5.4pt]},overviewDPEdge!46,line width=0.62pt]
+    (2.80,0.35) -- (10.10,0.35)
+    node[right,font=\sffamily\footnotesize,text=black] {$x$};
+  \draw[-{Stealth[length=5pt,width=5.4pt]},overviewDPEdge!46,line width=0.62pt]
+    (2.80,0.35) -- (3.50,1.55)
+    node[above right,font=\sffamily\footnotesize,text=black] {$y$};
+  \draw[-{Stealth[length=5pt,width=5.4pt]},overviewDPEdge!46,line width=0.62pt]
+    (2.80,0.35) -- (2.80,4.65)
+    node[above,font=\sffamily\footnotesize,text=black] {$z$};
+
+  % Expanded flight path, with p1 and p2 advanced slightly farther.
+  % Ground projections follow the horizontal waypoint positions.
+  \coordinate (taskGroundOne) at (5.70,0.72);
+  \coordinate (taskGroundTwo) at (9.45,1.10);
+  \coordinate (taskGroundThree) at (6.6125,1.60);
+  \coordinate (taskGroundFour) at (3.30,1.08);
+  \coordinate (taskPointOne) at (5.70,1.40);
+  \coordinate (taskPointTwo) at (9.45,2.60);
+  \coordinate (taskPointThree) at (6.6125,4.0875);
+  \coordinate (taskPointFour) at (3.30,2.3375);
+  \coordinate (taskTwoIn) at ($(taskPointOne)!0.78!(taskPointTwo)$);
+  \coordinate (taskTwoOut) at ($(taskPointTwo)!0.22!(taskPointThree)$);
+  \coordinate (taskThreeIn) at ($(taskPointTwo)!0.78!(taskPointThree)$);
+  \coordinate (taskThreeOut) at ($(taskPointThree)!0.22!(taskPointFour)$);
+
+  % Ground projection and the smoothed nominal reference from Figure 3.
+  \draw[thick,overviewActionEdge,densely dashed,opacity=0.48]
+    (taskGroundOne) -- (taskGroundTwo) --
+    (taskGroundThree) -- (taskGroundFour);
+  \foreach \ground/\flight in {
+    taskGroundOne/taskPointOne,taskGroundTwo/taskPointTwo,
+    taskGroundThree/taskPointThree,taskGroundFour/taskPointFour} {
+    \draw[densely dotted,overviewDPEdge!38,line width=0.58pt]
+      (\ground) -- (\flight);
+  }
+  \draw[very thick,paperReference,densely dashed,line cap=round,line join=round]
+    (taskPointOne) -- (taskTwoIn)
+    .. controls (taskPointTwo) .. (taskTwoOut) -- (taskThreeIn)
+    .. controls (taskPointThree) .. (taskThreeOut) -- (taskPointFour);
+  \draw[->,thick,paperReference,shorten >=1pt]
+    ($(taskPointOne)!0.42!(taskTwoIn)$) --
+    ($(taskPointOne)!0.68!(taskTwoIn)$);
+  \draw[->,thick,paperReference,shorten >=1pt]
+    ($(taskTwoOut)!0.38!(taskThreeIn)$) --
+    ($(taskTwoOut)!0.64!(taskThreeIn)$);
+  \draw[->,thick,paperReference,shorten >=1pt]
+    ($(taskThreeOut)!0.35!(taskPointFour)$) --
+    ($(taskThreeOut)!0.62!(taskPointFour)$);
+
+  \node[annotation,font=\sffamily\footnotesize,text=overviewDPEdge!62]
+    at ($(taskPointOne)+(0.12,-0.16)$) {$p_1$};
+  \node[annotation,font=\sffamily\footnotesize,text=overviewActionEdge]
+    at ($(taskPointTwo)+(0.14,-0.15)$) {$p_2$};
+  \node[annotation,font=\sffamily\footnotesize,text=overviewActionEdge]
+    at ($(taskPointThree)+(0.00,0.18)$) {$p_3$};
+  \node[annotation,font=\sffamily\footnotesize,text=overviewActionEdge]
+    at ($(taskPointFour)+(-0.27,0.02)$) {$p_4$};
+  % Persistent side-wind field, simplified from Figure 3.
+  \fill[paperPropellerLight,draw=paperPropellerEdge,line width=0.38pt,dashed,
+    fill opacity=0.48,draw opacity=0.85]
+    (3.60,1.31) .. controls (4.48,1.18) and (5.38,1.28) .. (6.25,1.46)
+    .. controls (6.38,1.53) and (6.38,1.75) .. (6.24,1.92)
+    .. controls (5.36,1.88) and (4.46,1.88) .. (3.58,2.00)
+    .. controls (3.42,1.78) and (3.42,1.52) .. cycle;
+  \draw[-{Stealth[length=8pt,width=8pt]},paperPropellerEdge,densely dashed,
+    line width=1.10pt,
+    line cap=round,line join=round]
+    (3.68,1.38) .. controls (4.55,1.28) and (5.35,1.36) .. (5.84,1.47);
+  \draw[-{Stealth[length=8pt,width=8pt]},paperPropellerEdge,densely dashed,
+    line width=1.10pt,
+    line cap=round,line join=round]
+    (3.62,1.88) .. controls (4.52,1.76) and (5.34,1.78) .. (5.84,1.82);
+  \node[annotation,font=\sffamily\small,text=paperPropellerEdge,anchor=west]
+    at (3.58,1.02) {side wind $w_t$};
+
+  % Racing quadrotor and its ground projection.
+  \coordinate (taskProjection) at ($(taskGroundOne)!0.42!(taskGroundTwo)$);
+  \coordinate (taskDrone) at ($(taskPointOne)!0.42!(taskPointTwo)$);
+  \fill[overviewDPEdge!25] (taskProjection)
+    ellipse[x radius=0.42cm,y radius=0.09cm];
+  \draw[dashed,overviewDPEdge!38,line width=0.72pt]
+    (taskDrone) -- (taskProjection);
+  \begin{scope}[shift={(taskDrone)},rotate=16,xscale=1.10,yscale=0.86]
+    % Propeller-wash halos from Figure 3.
+    \foreach \x/\y/\tilt in {-0.78/-0.54/-4,0.78/0.54/-4,
+      -0.78/0.54/4,0.78/-0.54/4} {
+      \begin{scope}[shift={(\x,\y)},rotate=\tilt]
+        \draw[draw=paperPropellerEdge,fill=paperPropellerLight,
+          line width=0.42pt,opacity=0.72]
+          (0,0) ellipse[x radius=0.34,y radius=0.19];
+      \end{scope}
+    }
+
+    % Silver frame, motor pods, and fuselage; method colour stays in the logic.
+    \draw[line width=2.8pt,droneLight!48,line cap=round]
+      (-0.78,-0.54) -- (0.78,0.54);
+    \draw[line width=2.8pt,droneLight!48,line cap=round]
+      (-0.78,0.54) -- (0.78,-0.54);
+    \draw[line width=1.65pt,droneAccent,line cap=round]
+      (-0.78,-0.54) -- (0.78,0.54);
+    \draw[line width=1.65pt,droneAccent,line cap=round]
+      (-0.78,0.54) -- (0.78,-0.54);
+    \foreach \x/\y in {-0.78/-0.54,0.78/0.54,-0.78/0.54,0.78/-0.54} {
+      \shade[inner color=droneLight!55!white,
+        outer color=droneAccent,draw=droneAccent!85!black,
+        line width=0.32pt] (\x,\y) circle[radius=0.17];
+      \draw[fill=droneAccent!82!black,draw=black,line width=0.22pt]
+        (\x,\y) circle[radius=0.095];
+    }
+    \shade[left color=droneAccent!88!black,right color=droneAccent,
+      middle color=droneLight,draw=black,
+      line width=0.52pt,rounded corners=1.2pt]
+      (-0.48,-0.19) -- (0.18,-0.22) -- (0.55,0) -- (0.18,0.22) --
+      (-0.48,0.19) -- (-0.62,0) -- cycle;
+    \draw[fill=droneAccent,draw=black,line width=0.30pt]
+      (0.46,0) -- (0.66,0.11) -- (0.66,-0.11) -- cycle;
+
+    % Spinning three-blade propellers and motor caps.
+    \foreach \x/\y/\spin in {-0.78/-0.54/18,0.78/0.54/18,
+      -0.78/0.54/-18,0.78/-0.54/-18} {
+      \begin{scope}[shift={(\x,\y)}]
+        \foreach \ang in {0,120,240} {
+          \pgfmathsetmacro{\bladeangle}{\ang+\spin}
+          \begin{scope}[rotate=\bladeangle]
+            \shade[left color=paperPropellerLight!45!white,
+              right color=paperPropellerLight,draw=paperPropellerEdge,
+              line width=0.22pt,opacity=0.78]
+              (0.045,0.017) .. controls (0.19,0.070) and
+              (0.32,0.060) .. (0.40,0) .. controls
+              (0.31,-0.055) and (0.18,-0.050) ..
+              (0.045,-0.017) -- cycle;
+          \end{scope}
+        }
+        \shade[inner color=droneLight!55!white,
+          outer color=droneAccent,draw=droneAccent!85!black,
+          line width=0.30pt] (0,0) circle[radius=0.125];
+        \draw[fill=droneAccent,draw=black,line width=0.18pt]
+          (0,0) circle[radius=0.060];
+      \end{scope}
+    }
+
+    % Camera lens and navigation LEDs.
+    \shade[inner color=paperPropellerLight,outer color=paperPropellerEdge,
+      draw=black,line width=0.25pt] (0.61,0) circle[radius=0.066];
+    \fill[white,opacity=0.82] (0.63,0.020) circle[radius=0.014];
+    \draw[fill=white,draw=black,line width=0.20pt]
+      (-0.49,0.13) circle[radius=0.024];
+    \draw[fill=white,draw=black,line width=0.20pt]
+      (-0.49,-0.13) circle[radius=0.024];
+    \draw[fill=paperPropellerEdge,draw=black,line width=0.18pt]
+      (0.31,0.15) circle[radius=0.021];
+    \draw[fill=paperPropellerEdge,draw=black,line width=0.18pt]
+      (0.31,-0.15) circle[radius=0.021];
+  \end{scope}
+
+\end{scope}
+
+\ifdefined\CompactFullWidth
+\end{scope}
+\end{scope}
+\fi
+\end{scope}
+
+% Exclude invisible plotting margins when sizing the complete illustration.
+\pgfresetboundingbox
+\ifdefined\CompactMethodPanels
+\path[use as bounding box] (-0.04,-0.93) rectangle (16.04,4.85);
+\else
+\ifdefined\CompactFullWidth
+\path[use as bounding box] (-0.04cm,0.78cm) rectangle (16.04cm,10.43cm);
+\else
+\path[use as bounding box] (-0.04,-0.93) rectangle (16.04,11.54);
+\fi
+\fi
+\end{tikzpicture}
+\endgroup

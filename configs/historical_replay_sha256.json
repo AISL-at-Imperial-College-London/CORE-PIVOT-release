@@ -1,0 +1,13 @@
+{
+  "description": "Historical corrected 24-million-transition training replay exported for the paper; regenerated release arrays must match these file hashes. Includes the fixed state-consistent previous-action augmentation.",
+  "rows": 24000000,
+  "files": {
+    "observations.npy": "069347b3096ae604d469a9c1f2f21c4b88caea560d92b1291d6f810236095ff7",
+    "next_observations.npy": "9204eaa4fbaf6219464cdb97ab7fa64b9187e331ca372ad45b52b00f2b755d61",
+    "actions.npy": "8652018b62dd125ca689648a467db1611aa51ea0df64ed98ee80f8ece496e4c5",
+    "next_actions.npy": "c2db9bd9ad731689d40b722f38b262495e61cdb239fda9a7629eeed8081f1d57",
+    "rewards.npy": "6a3c1eb12c2cfdddd6675576bfd2c98ba9c0465282390431a419126858e2771a",
+    "terminals.npy": "8dd996c2346a9f138bf7a017cff204b341f99d70c909a0160a5bb683e32f7483",
+    "timeouts.npy": "aa00a412a3288eea71f345b86fedb23f8a183743167a3ce657f79ce19f4c4991"
+  }
+}

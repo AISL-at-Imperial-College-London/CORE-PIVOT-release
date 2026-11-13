@@ -1,0 +1,125 @@
+{
+  "paper_revision": "Figure set: 13 November 2026",
+  "scope": "Current Figures 1–19. Numerical plots are regenerated from archived measurements; fonts and layout may vary slightly across systems. Timing measurements are not included.",
+  "schematic_sha256": {
+    "action_search.pdf": "77843962f95dc3e7053b795c4c828e46043d62fbcb7fbcc1081c8a5a1a86b1e1",
+    "tracking_task.pdf": "1f0877bf0d80b89a795e7a8998fd1eb604847061f30e292dc0a9bc9b61da748f",
+    "workflow.pdf": "c2574276838b8a59bf435adb10fb7da60cc63a428bc9b86b37295d511bf16937"
+  },
+  "figures": [
+    {
+      "id": 1,
+      "stem": "workflow",
+      "caption": "CORE-PIVOT workflow",
+      "kind": "verified schematic PDF (editable TikZ included)"
+    },
+    {
+      "id": 2,
+      "stem": "action_search",
+      "caption": "Candidate ranking and numerical refinement; a_B is the highest-ranked starting candidate and a* is the applied action after safeguarded refinement.",
+      "kind": "verified schematic PDF (editable TikZ included)"
+    },
+    {
+      "id": 3,
+      "stem": "tracking_task",
+      "caption": "Tracking reference and additive wind",
+      "kind": "verified schematic PDF (editable TikZ included)"
+    },
+    {
+      "id": 4,
+      "stem": "pd_gains",
+      "caption": "PD gains coloured by mean training cost",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 5,
+      "stem": "cost_diversity",
+      "caption": "Training episode-cost diversity: median, interquartile and full ranges",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 6,
+      "stem": "learning_curves",
+      "caption": "Validation learning curves",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 7,
+      "stem": "robustness_analysis",
+      "caption": "Disturbance profiles and robustness; five-seed means and min-max ranges",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 8,
+      "stem": "four_ablations",
+      "caption": "Radius, conservatism, fixed-sigma IQL extraction and paired CQL backups",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 9,
+      "stem": "state_action_density_only",
+      "caption": "Historical state-action diversity",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 10,
+      "stem": "held_out_test_performance",
+      "caption": "Held-out episode distributions. The fixed Best PD baseline is not a learning algorithm; it shows variability across winds only, without training-seed replication. Diamonds denote seed means for learned methods.",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 11,
+      "stem": "learning_curves_fullrange",
+      "caption": "Validation learning curves, full range",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 12,
+      "stem": "hpo_shared_ordinary_full_clean",
+      "caption": "Ordinary-validation tuning, full range",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 13,
+      "stem": "hpo_shared_stronger_full_clean",
+      "caption": "Stronger-validation tuning, full range",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 14,
+      "stem": "hpo_shared_ordinary_zoom_clean",
+      "caption": "Ordinary-validation tuning, detail",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 15,
+      "stem": "hpo_shared_stronger_zoom_clean",
+      "caption": "Stronger-validation tuning, detail",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 16,
+      "stem": "test_trajectories_light",
+      "caption": "Ordinary and stronger held-out trajectories",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 17,
+      "stem": "random_walk_trajectories_light",
+      "caption": "Random-walk trajectories",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 18,
+      "stem": "step_trajectories_light",
+      "caption": "Step-gust trajectories",
+      "kind": "numerical regeneration"
+    },
+    {
+      "id": 19,
+      "stem": "reversing_trajectories_light",
+      "caption": "Reversing-gust trajectories",
+      "kind": "numerical regeneration"
+    }
+  ]
+}

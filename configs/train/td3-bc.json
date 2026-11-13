@@ -1,0 +1,16 @@
+{
+  "algorithm": "td3-bc",
+  "steps": 500000,
+  "checkpoint_every": 10000,
+  "config": {
+    "batch_size": 256,
+    "actor_learning_rate": 0.0003,
+    "critic_learning_rate": 0.0003,
+    "discount": 0.99,
+    "tau": 0.005,
+    "alpha": 0.5,
+    "target_noise": 0.2,
+    "noise_clip": 0.5,
+    "actor_interval": 2
+  }
+}

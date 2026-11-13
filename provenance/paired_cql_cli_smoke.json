@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "date": "2026-11-05",
+  "seeds": [123, 124, 125, 126, 127],
+  "backup_arms": ["actor", "sarsa"],
+  "training_runs": 10,
+  "updates_per_run": 2,
+  "checkpoint_steps": [0, 1, 2],
+  "data": "Regenerated smoke dataset: 4500 transitions, not full benchmark data",
+  "paired_saved_state_verifier_passed": true,
+  "identical_initial_states_and_matched_random_streams": true,
+  "validation_episodes": 20,
+  "validation_scope": "One ordinary and one stronger wind per arm and seed; diagnostic only",
+  "verified_seed_checkpoint_loading": true,
+  "summary_and_svg_plot_generation_passed": true,
+  "test_accessed": false,
+  "full_retraining_performed": false,
+  "claim": "End-to-end CLI wiring check, not a performance result or historical CUDA replay"
+}

@@ -1,0 +1,18 @@
+{
+  "algorithm": "core-pivot",
+  "steps": 500000,
+  "checkpoint_every": 10000,
+  "config": {
+    "batch_size": 256,
+    "hidden_size": 256,
+    "learning_rate": 3e-05,
+    "discount": 0.99,
+    "tau": 0.005,
+    "conservative_weight": 0.01,
+    "conservative_temperature": 1.0,
+    "samples": 10,
+    "bc_candidates": 10,
+    "uniform_candidates": 40,
+    "search_iterations": 40
+  }
+}

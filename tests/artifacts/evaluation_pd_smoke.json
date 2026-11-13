@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "method": "best-pd",
+  "seed": null,
+  "checkpoint_step": null,
+  "inputs": {},
+  "conditions": [
+    {
+      "id": "validation_ordinary",
+      "family": "split",
+      "stronger": false
+    },
+    {
+      "id": "validation_stronger",
+      "family": "split",
+      "stronger": true
+    }
+  ],
+  "rows": [
+    {
+      "wind_seed": 51020,
+      "condition": "validation_ordinary",
+      "episode_cost": 63.18571233774538,
+      "position_rmse": 0.25583121168337797,
+      "velocity_rmse": 0.30657794750227835,
+      "max_normalized_action": 0.29882800579071045,
+      "wind_sha256": "ab6bb8a3f675ba6a4a18723867f30ccd6eea2a4a3b67b7903f8abf2040c5a718"
+    },
+    {
+      "wind_seed": 51139,
+      "condition": "validation_stronger",
+      "episode_cost": 138.45986672200118,
+      "position_rmse": 0.4025311472240164,
+      "velocity_rmse": 0.33601957639289637,
+      "max_normalized_action": 0.3277927041053772,
+      "wind_sha256": "7b19bed940e7ced6db5153feb3db22a88a80120678286172c2552bdba06137f3"
+    }
+  ],
+  "network_updates": 0,
+  "evaluation_batch": "new_reproduction_run_not_pooled_with_paper_exports",
+  "partial_diagnostic": true,
+  "held_out_test_accessed": false,
+  "search": {
+    "candidates": 100,
+    "radius": 0.1,
+    "iterations": 40,
+    "core_rng": "9001 + wind_seed; reset each episode",
+    "other_rng": "checkpoint state; reset each episode"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "device": "cpu",
+    "seconds": 0.125
+  },
+  "reproducibility_note": "Original HPC solver runtime: Python3.12.3, torch2.9.1+cu130, numpy2.5.1, scipy1.18.0. Cross-platform SLSQP equality is not guaranteed."
+}

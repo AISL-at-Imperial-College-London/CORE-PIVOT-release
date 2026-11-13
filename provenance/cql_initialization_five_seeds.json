@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "seeds": [
+    {
+      "seed": 123,
+      "both_arms_bitwise_equal_to_archived_initial": true,
+      "model_optimizer_rng_and_normalization_equal": true,
+      "initial_file_sha256": "488335fe1e5b4ada5df68dc142bb970214398e511db22b6504e962ac155fe9e9"
+    },
+    {
+      "seed": 124,
+      "both_arms_bitwise_equal_to_archived_initial": true,
+      "model_optimizer_rng_and_normalization_equal": true,
+      "initial_file_sha256": "7e9f8446dfa3c1822c7be625c8a1ad1f9b04d88158b4e91185ce3ce82159ad36"
+    },
+    {
+      "seed": 125,
+      "both_arms_bitwise_equal_to_archived_initial": true,
+      "model_optimizer_rng_and_normalization_equal": true,
+      "initial_file_sha256": "286226350459aa5f5e5bd2ac885d62d4f38dabe71ba65880f9e4178053519990"
+    },
+    {
+      "seed": 126,
+      "both_arms_bitwise_equal_to_archived_initial": true,
+      "model_optimizer_rng_and_normalization_equal": true,
+      "initial_file_sha256": "7066929b4ffd6c4dd235df83e93dffc77998dce9e352ee8c0657d41e8bab499e"
+    },
+    {
+      "seed": 127,
+      "both_arms_bitwise_equal_to_archived_initial": true,
+      "model_optimizer_rng_and_normalization_equal": true,
+      "initial_file_sha256": "c2e9338c27b9e2d5c6aba67f6529023d35b214433812ff397aa35fa68af7c009"
+    }
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "platform": "Windows",
+    "device": "cpu",
+    "gpu": null,
+    "gpu_capability": null,
+    "cuda": "13.0",
+    "cudnn": 91200,
+    "deterministic_algorithms": true,
+    "allow_tf32_matmul": false,
+    "allow_tf32_cudnn": false,
+    "torch_threads": 1
+  },
+  "normalization_sha256": "261e3822ab441ae73c9e1af7dbe18b6350ec8051c66ec21136beb6b54ff4477c",
+  "note": "Fresh CPU initialization parity; no 500k training or cross-device equality claimed."
+}

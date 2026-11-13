@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Preprint forthcoming. Please cite the accompanying manuscript below; its link and citation metadata will be updated when available."
+title: "CORE-PIVOT: Conservative Offline Reinforcement Learning with Policy Improvement via Value-Guided Optimisation at Test Time"
+type: software
+version: 0.1.0
+date-released: 2026-11-05
+authors:
+  - family-names: Evripidou
+    given-names: Christos
+repository-code: "https://github.com/EvripidouKris/CORE-PIVOT-release"
+preferred-citation:
+  type: generic
+  title: "CORE-PIVOT: Conservative Offline Reinforcement Learning with Policy Improvement via Value-Guided Optimisation at Test Time"
+  authors:
+    - family-names: Evripidou
+      given-names: Christos
+    - family-names: Chachuat
+      given-names: Benoît
+    - family-names: Mercangöz
+      given-names: Mehmet
+  notes: "Unpublished manuscript in preparation, with preprint release planned soon. The preprint link and publication identifiers will be added when available."

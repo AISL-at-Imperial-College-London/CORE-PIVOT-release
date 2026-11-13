@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "scope": "CPU implementation migration parity, not historical CUDA replay",
+  "source_worker_sha256": "b396aa91cade627d76e7f8932ff5af197575ad109fdfdfd907f0aa04c01a351f",
+  "source_model_sha256": "3c5e433f3b67c60d61fea58490721997f48777f5321f7ba67b4736ce554d8a36",
+  "torch": "2.9.1+cu130",
+  "numpy": "2.5.1",
+  "results": [
+    {
+      "kind": "awr",
+      "updates": 1000,
+      "exact_metrics": true,
+      "exact_actor": true,
+      "shared_batches": true,
+      "frozen_values": true,
+      "elapsed_seconds": 32.5,
+      "actor_sha256": "18d1d163cdf4ae42f0140d8300929672d2dad1406507ecabb50be0e51f41fc4c"
+    },
+    {
+      "kind": "ddpg_bc",
+      "updates": 1000,
+      "exact_metrics": true,
+      "exact_actor": true,
+      "shared_batches": true,
+      "frozen_values": true,
+      "elapsed_seconds": 9.827999999979511,
+      "actor_sha256": "a92d4b8e402be65c6ec005ee932d8ffd5842bce83dc36b68217fa9b27f0f591f"
+    }
+  ]
+}

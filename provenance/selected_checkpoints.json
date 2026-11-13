@@ -1,0 +1,881 @@
+{
+  "date": "2026-11-09",
+  "passed": true,
+  "training_launched": false,
+  "optimizer_updates": 0,
+  "held_out_test_accessed": false,
+  "scope": "Reviewer interface and selected main-paper checkpoint release; no new benchmark or training campaign",
+  "checkpoint_manifest": "checkpoints/selected/manifest.json",
+  "original_sha256_matches": 34,
+  "historical_hash_unavailable": [
+    {
+      "method": "td3-bc",
+      "seed": 126,
+      "step": 290000
+    }
+  ],
+  "checkpoint_loading": {
+    "passed": true,
+    "checkpoint_count": 35,
+    "complete_selection": true,
+    "training_launched": false,
+    "optimizer_steps": 0,
+    "held_out_test_accessed": false,
+    "runtime": {
+      "torch": "2.9.1+cu130",
+      "numpy": "2.5.1"
+    },
+    "checks": [
+      {
+        "method": "bc",
+        "seed": 123,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "bc",
+        "seed": 124,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "bc",
+        "seed": 125,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "bc",
+        "seed": 126,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "bc",
+        "seed": 127,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "core-pivot",
+        "seed": 123,
+        "step": 360000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "core-pivot",
+        "seed": 124,
+        "step": 360000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "core-pivot",
+        "seed": 125,
+        "step": 360000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "core-pivot",
+        "seed": 126,
+        "step": 360000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "core-pivot",
+        "seed": 127,
+        "step": 360000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "cql",
+        "seed": 123,
+        "step": 330000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "cql",
+        "seed": 124,
+        "step": 330000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "cql",
+        "seed": 125,
+        "step": 330000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "cql",
+        "seed": 126,
+        "step": 330000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "cql",
+        "seed": 127,
+        "step": 330000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "easybcq",
+        "seed": 123,
+        "step": 480000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "easybcq",
+        "seed": 124,
+        "step": 480000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "easybcq",
+        "seed": 125,
+        "step": 480000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "easybcq",
+        "seed": 126,
+        "step": 480000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "easybcq",
+        "seed": 127,
+        "step": 480000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "hoflon",
+        "seed": 123,
+        "step": 310000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "hoflon",
+        "seed": 124,
+        "step": 310000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "hoflon",
+        "seed": 125,
+        "step": 310000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "hoflon",
+        "seed": 126,
+        "step": 310000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "hoflon",
+        "seed": 127,
+        "step": 310000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "iql",
+        "seed": 123,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "iql",
+        "seed": 124,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "iql",
+        "seed": 125,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "iql",
+        "seed": 126,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "iql",
+        "seed": 127,
+        "step": 500000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "td3-bc",
+        "seed": 123,
+        "step": 290000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "td3-bc",
+        "seed": 124,
+        "step": 290000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "td3-bc",
+        "seed": 125,
+        "step": 290000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "td3-bc",
+        "seed": 126,
+        "step": 290000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      },
+      {
+        "method": "td3-bc",
+        "seed": 127,
+        "step": 290000,
+        "hash_matches": true,
+        "seed_verified": true,
+        "deterministic_five_step_inference": true,
+        "parameters_unchanged": true,
+        "checkpoint_file_unchanged": true
+      }
+    ]
+  },
+  "recovered_td3": {
+    "schema_version": 1,
+    "training_performed": false,
+    "optimizer_updates_permitted": false,
+    "evaluation_split": "validation_only",
+    "heldout_test_accessed": false,
+    "torch_version": "2.9.1+cu130",
+    "torch_threads": 1,
+    "source_selection_manifest_sha256": "ccd5322de6a4bf6be8b5685d705faaba38d970955b95441ad649162a1bd4188d",
+    "tolerance": {
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "checkpoints": [
+      {
+        "method": "td3-bc",
+        "seed": 123,
+        "step": 290000,
+        "algorithm": "CORLTD3BC",
+        "config": {
+          "batch_size": 256,
+          "actor_learning_rate": 0.0003,
+          "critic_learning_rate": 0.0003,
+          "discount": 0.99,
+          "tau": 0.005,
+          "alpha": 0.5,
+          "target_noise": 0.2,
+          "noise_clip": 0.5,
+          "actor_interval": 2
+        },
+        "source_identifier": "hpc_corl_td3_cql16_contiguous_retry_20261018/results/td3bc_alpha0p5/seed123/checkpoints/step000290000.pt",
+        "recovered_filename": "corepivot_release_td3_s123_290k.pt",
+        "size_bytes": 3556754,
+        "sha256": "490f59a4587f463e59ea88e0004036a3ae41c566f8f8f6611bd1a443b25968df",
+        "historical_frozen_sha256": "490f59a4587f463e59ea88e0004036a3ae41c566f8f8f6611bd1a443b25968df",
+        "historic_hash_matches": true,
+        "verification_basis": "original_frozen_sha256_and_validation_spot_check",
+        "validation_episodes": 2,
+        "validation_comparisons": [
+          {
+            "wind_seed": 51020,
+            "stronger": false,
+            "historical_validation_cost": 30.90371609991964,
+            "reproduced_validation_cost": 30.903721535619525,
+            "absolute_error": 5.435699883094003e-06,
+            "relative_error": 1.7589146449310466e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51139,
+            "stronger": true,
+            "historical_validation_cost": 67.5179713856076,
+            "reproduced_validation_cost": 67.51796709959578,
+            "absolute_error": 4.286011815679558e-06,
+            "relative_error": 6.347957036803362e-08,
+            "passed": true
+          }
+        ],
+        "max_absolute_cost_error": 5.435699883094003e-06,
+        "max_relative_cost_error": 1.7589146449310466e-07,
+        "validation_passed": true,
+        "metadata_screen": {
+          "credential_pattern_hits": 0,
+          "absolute_path_string_hits": 0,
+          "string_field_count": 1,
+          "values_disclosed": false
+        }
+      },
+      {
+        "method": "td3-bc",
+        "seed": 124,
+        "step": 290000,
+        "algorithm": "CORLTD3BC",
+        "config": {
+          "batch_size": 256,
+          "actor_learning_rate": 0.0003,
+          "critic_learning_rate": 0.0003,
+          "discount": 0.99,
+          "tau": 0.005,
+          "alpha": 0.5,
+          "target_noise": 0.2,
+          "noise_clip": 0.5,
+          "actor_interval": 2
+        },
+        "source_identifier": "hpc_corl_td3_cql16_contiguous_retry_20261018/results/td3bc_alpha0p5/seed124/checkpoints/step000290000.pt",
+        "recovered_filename": "corepivot_release_td3_s124_290k.pt",
+        "size_bytes": 3556754,
+        "sha256": "6815a60b749e1240734e8e3544d2cbe4d55e9afae22a517cac320f6276c6500d",
+        "historical_frozen_sha256": "6815a60b749e1240734e8e3544d2cbe4d55e9afae22a517cac320f6276c6500d",
+        "historic_hash_matches": true,
+        "verification_basis": "original_frozen_sha256_and_validation_spot_check",
+        "validation_episodes": 2,
+        "validation_comparisons": [
+          {
+            "wind_seed": 51020,
+            "stronger": false,
+            "historical_validation_cost": 45.2275756473576,
+            "reproduced_validation_cost": 45.227575381262135,
+            "absolute_error": 2.66095462109206e-07,
+            "relative_error": 5.883478349225922e-09,
+            "passed": true
+          },
+          {
+            "wind_seed": 51139,
+            "stronger": true,
+            "historical_validation_cost": 87.06828822172334,
+            "reproduced_validation_cost": 87.06827853577283,
+            "absolute_error": 9.685950502102969e-06,
+            "relative_error": 1.1124544538463025e-07,
+            "passed": true
+          }
+        ],
+        "max_absolute_cost_error": 9.685950502102969e-06,
+        "max_relative_cost_error": 1.1124544538463025e-07,
+        "validation_passed": true,
+        "metadata_screen": {
+          "credential_pattern_hits": 0,
+          "absolute_path_string_hits": 0,
+          "string_field_count": 1,
+          "values_disclosed": false
+        }
+      },
+      {
+        "method": "td3-bc",
+        "seed": 126,
+        "step": 290000,
+        "algorithm": "CORLTD3BC",
+        "config": {
+          "batch_size": 256,
+          "actor_learning_rate": 0.0003,
+          "critic_learning_rate": 0.0003,
+          "discount": 0.99,
+          "tau": 0.005,
+          "alpha": 0.5,
+          "target_noise": 0.2,
+          "noise_clip": 0.5,
+          "actor_interval": 2
+        },
+        "source_identifier": "hpc_td3bc_alpha05_seeds125127_extract2_20261020/results/seed126/checkpoints/step000290000.pt",
+        "recovered_filename": "corepivot_release_td3_s126_290k.pt",
+        "size_bytes": 3556754,
+        "sha256": "41b193597ff3be1160a8ad5f3fbd2f61a3e34ee070a5a41c8f4a4781a305f4e7",
+        "historical_frozen_sha256": null,
+        "historic_hash_matches": null,
+        "verification_basis": "all_original_validation_rows_consistent_but_no_historical_hash",
+        "validation_episodes": 20,
+        "validation_comparisons": [
+          {
+            "wind_seed": 51020,
+            "stronger": false,
+            "historical_validation_cost": 37.6159535742112,
+            "reproduced_validation_cost": 37.61595528295685,
+            "absolute_error": 1.7087456498643405e-06,
+            "relative_error": 4.542608886660858e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51029,
+            "stronger": false,
+            "historical_validation_cost": 32.73025553436451,
+            "reproduced_validation_cost": 32.73025295986404,
+            "absolute_error": 2.574500470586827e-06,
+            "relative_error": 7.865812315103312e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51034,
+            "stronger": false,
+            "historical_validation_cost": 29.948178950430357,
+            "reproduced_validation_cost": 29.948178691544058,
+            "absolute_error": 2.588862990648977e-07,
+            "relative_error": 8.644475495268051e-09,
+            "passed": true
+          },
+          {
+            "wind_seed": 51048,
+            "stronger": false,
+            "historical_validation_cost": 22.402726077693156,
+            "reproduced_validation_cost": 22.402723356651965,
+            "absolute_error": 2.7210411914779797e-06,
+            "relative_error": 1.2146027148844958e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51055,
+            "stronger": false,
+            "historical_validation_cost": 20.73822328754527,
+            "reproduced_validation_cost": 20.738221530758384,
+            "absolute_error": 1.7567868866308345e-06,
+            "relative_error": 8.471250705868838e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51057,
+            "stronger": false,
+            "historical_validation_cost": 22.790004142758995,
+            "reproduced_validation_cost": 22.79000261525881,
+            "absolute_error": 1.5275001850056924e-06,
+            "relative_error": 6.702500690378421e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51067,
+            "stronger": false,
+            "historical_validation_cost": 26.16105021169128,
+            "reproduced_validation_cost": 26.16105124390221,
+            "absolute_error": 1.0322109318394723e-06,
+            "relative_error": 3.9456020438284274e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51069,
+            "stronger": false,
+            "historical_validation_cost": 28.516549183941137,
+            "reproduced_validation_cost": 28.516546263530405,
+            "absolute_error": 2.920410732798473e-06,
+            "relative_error": 1.0241108466388628e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51091,
+            "stronger": false,
+            "historical_validation_cost": 48.07765618222888,
+            "reproduced_validation_cost": 48.07765460546824,
+            "absolute_error": 1.5767606384997634e-06,
+            "relative_error": 3.279612118617769e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51094,
+            "stronger": false,
+            "historical_validation_cost": 32.17413601153099,
+            "reproduced_validation_cost": 32.1741328429677,
+            "absolute_error": 3.1685632890798843e-06,
+            "relative_error": 9.848169001163832e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51107,
+            "stronger": false,
+            "historical_validation_cost": 50.40645442627243,
+            "reproduced_validation_cost": 50.40647232039063,
+            "absolute_error": 1.7894118194305975e-05,
+            "relative_error": 3.5499656537991595e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51115,
+            "stronger": false,
+            "historical_validation_cost": 21.25136252612653,
+            "reproduced_validation_cost": 21.251358624972447,
+            "absolute_error": 3.901154084218206e-06,
+            "relative_error": 1.835719511829939e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51122,
+            "stronger": false,
+            "historical_validation_cost": 33.61820859367307,
+            "reproduced_validation_cost": 33.61821232202828,
+            "absolute_error": 3.7283552103417605e-06,
+            "relative_error": 1.1090285194563982e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51124,
+            "stronger": false,
+            "historical_validation_cost": 25.632957758136293,
+            "reproduced_validation_cost": 25.6329612737348,
+            "absolute_error": 3.5155985074197815e-06,
+            "relative_error": 1.3715149615552566e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51138,
+            "stronger": false,
+            "historical_validation_cost": 35.286204009683615,
+            "reproduced_validation_cost": 35.28620345608562,
+            "absolute_error": 5.53597992336563e-07,
+            "relative_error": 1.5688794186663966e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51139,
+            "stronger": true,
+            "historical_validation_cost": 114.42624289682416,
+            "reproduced_validation_cost": 114.42622532342796,
+            "absolute_error": 1.7573396206671532e-05,
+            "relative_error": 1.535783729482153e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51148,
+            "stronger": true,
+            "historical_validation_cost": 51.61598816006763,
+            "reproduced_validation_cost": 51.61598067895782,
+            "absolute_error": 7.481109811635633e-06,
+            "relative_error": 1.4493783957861617e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51170,
+            "stronger": true,
+            "historical_validation_cost": 81.30928926264464,
+            "reproduced_validation_cost": 81.30928732810358,
+            "absolute_error": 1.934541060677475e-06,
+            "relative_error": 2.3792374502604928e-08,
+            "passed": true
+          },
+          {
+            "wind_seed": 51183,
+            "stronger": true,
+            "historical_validation_cost": 78.6422543909528,
+            "reproduced_validation_cost": 78.64227409020747,
+            "absolute_error": 1.9699254664828914e-05,
+            "relative_error": 2.504919882751373e-07,
+            "passed": true
+          },
+          {
+            "wind_seed": 51196,
+            "stronger": true,
+            "historical_validation_cost": 45.574083157702624,
+            "reproduced_validation_cost": 45.57407251788106,
+            "absolute_error": 1.0639821560687324e-05,
+            "relative_error": 2.3346210880139346e-07,
+            "passed": true
+          }
+        ],
+        "max_absolute_cost_error": 1.9699254664828914e-05,
+        "max_relative_cost_error": 3.5499656537991595e-07,
+        "validation_passed": true,
+        "metadata_screen": {
+          "credential_pattern_hits": 0,
+          "absolute_path_string_hits": 0,
+          "string_field_count": 1,
+          "values_disclosed": false
+        }
+      }
+    ],
+    "passed": true,
+    "seed126_limitation": "The historical frozen manifest has no SHA256 for TD3-BC seed126. Recovered file matches requested step/config and all20 original validation costs within stated tolerance; this is behavioral consistency, not a historical cryptographic identity claim."
+  },
+  "focused_tests": {
+    "tests_run": 62,
+    "passed": 61,
+    "skipped": 1,
+    "skip_reason": "Windows host does not permit unprivileged symlink creation for one adversarial archive fixture",
+    "suites": [
+      "test_reviewer_runner",
+      "test_download_checkpoints",
+      "test_selected_identity"
+    ],
+    "execution": "No-training tests; launcher execution and network mocked"
+  },
+  "fresh_install_cli_checks": [
+    {
+      "method": "bc",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 500000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 0.5160000000614673
+      }
+    },
+    {
+      "method": "best-pd",
+      "seed": null,
+      "episodes": 2,
+      "checkpoint_step": null,
+      "seed_verified": false,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 0.10999999998603016
+      }
+    },
+    {
+      "method": "core-pivot",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 360000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 35.28099999995902
+      }
+    },
+    {
+      "method": "cql",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 330000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 0.4529999999795109
+      }
+    },
+    {
+      "method": "easybcq",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 480000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 5.75
+      }
+    },
+    {
+      "method": "hoflon",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 310000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 57.60999999998603
+      }
+    },
+    {
+      "method": "iql",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 500000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 0.28200000000651926
+      }
+    },
+    {
+      "method": "td3-bc",
+      "seed": 123,
+      "episodes": 2,
+      "checkpoint_step": 290000,
+      "seed_verified": true,
+      "validation_only": true,
+      "network_updates": 0,
+      "runtime": {
+        "python": "3.12.14",
+        "torch": "2.15.0+cpu",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "device": "cpu",
+        "seconds": 0.25
+      }
+    }
+  ],
+  "source_package_checked": true,
+  "source_package_excludes_checkpoint_binaries": true,
+  "limitations": [
+    "Thirty-four files match pre-existing frozen hashes; TD3-BC seed126 is verified by recorded source, settings and validation agreement instead.",
+    "Inference and short validation diagnostics do not replace a full five-seed evaluation or rerun of training.",
+    "No cross-hardware bitwise training or solver guarantee.",
+    "Linux CI was not executed in this reviewer update."
+  ]
+}

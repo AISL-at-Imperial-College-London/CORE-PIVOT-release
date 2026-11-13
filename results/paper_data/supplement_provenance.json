@@ -1,0 +1,2221 @@
+{
+  "sources": [
+    {
+      "archive": "paper_dataset_diversity_20261023/state_action_complete_histogram.npz",
+      "sha256": "af269d49c3b3dc1fca05f667e52fd7062e8033d3fade7b93b3dc9bf83b63f8ff"
+    },
+    {
+      "archive": "paper_test_and_hpo_20261025/provenance_and_statistics.json",
+      "sha256": "7c7614ef89d6d1f15e8c1eeab9c4f06022b9a22d0d4df78f24bc60ea562bba8b"
+    },
+    {
+      "archive": "paper_test_and_hpo_20261025/tuning_plot_arrays.npz",
+      "sha256": "d2f0a5716188bdef5f7a22b3ae5a7fa83b343810ed1a546411a8cdac2e778b48"
+    },
+    {
+      "archive": "trajectory_grid_20261026/trajectory_grid_results.json",
+      "sha256": "28c62b4bb525de17327c80c5669ac9d64e8b5079e347e87118ceabea3565afce"
+    },
+    {
+      "archive": "trajectory_severities_20261027/trajectory_grid_results.json",
+      "sha256": "c9437b5b509e19d62937f3ed8cb727e059f9cb91aabcb55517eeefc44e094203"
+    },
+    {
+      "archive": "trajectory_densegusts_20261027/trajectory_grid_results.json",
+      "sha256": "ccd47c99d0861e9c06be8d4344210e80ff50fc075ce6769e7a933fe4905f3a63"
+    }
+  ],
+  "generated_files": {
+    "state_action_histogram.npz": "af269d49c3b3dc1fca05f667e52fd7062e8033d3fade7b93b3dc9bf83b63f8ff",
+    "tuning_arrays.npz": "d2f0a5716188bdef5f7a22b3ae5a7fa83b343810ed1a546411a8cdac2e778b48",
+    "tuning_settings.json": "66fcb9133abd325661365d14af186c779b9e85108fc77157d2417ae81a50fe8c",
+    "trajectories_test.npz": "5d12210743bad3c96cfbb956d4390de99f9293cece661bae143b8cc96993a96c",
+    "trajectories_random_walk.npz": "12191e13b77534136df73e782d217964e9b9422e395388fbb388be34272c591b",
+    "trajectories_step.npz": "524a42811e5251d6466de7403a9eea57bfad80d56d1e32ed9b123e63c961a3ed",
+    "trajectories_reversing.npz": "4fac4f7fd5b502dd5427f3b71ace4d6c5340d1e4e2e291405b204457fc013f55",
+    "trajectory_costs.json": "877df462c70ed818af561bfbc87cb7d2bca65b729132d7188a6504c752162595"
+  },
+  "trajectory_format": "Lossless archived positions, costs, wind identifiers and training seeds. No subsampling, new rollouts or training.",
+  "conditions": {
+    "test": [
+      "test_ordinary",
+      "test_stronger"
+    ],
+    "random_walk": [
+      "severity_2",
+      "severity_2.5"
+    ],
+    "step": [
+      "step_1.5",
+      "step_2",
+      "step_3"
+    ],
+    "reversing": [
+      "reversing_1.5",
+      "reversing_2",
+      "reversing_3"
+    ]
+  },
+  "records": [
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "iql",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "cql",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_ordinary",
+      "seed": 123,
+      "episodes": 15
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_stronger",
+      "seed": 123,
+      "episodes": 5
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_3",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_ordinary",
+      "seed": 124,
+      "episodes": 15
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_stronger",
+      "seed": 124,
+      "episodes": 5
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_3",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_ordinary",
+      "seed": 125,
+      "episodes": 15
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_stronger",
+      "seed": 125,
+      "episodes": 5
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_3",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_ordinary",
+      "seed": 126,
+      "episodes": 15
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_stronger",
+      "seed": 126,
+      "episodes": 5
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_3",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_ordinary",
+      "seed": 127,
+      "episodes": 15
+    },
+    {
+      "algorithm": "bc",
+      "condition": "test_stronger",
+      "seed": 127,
+      "episodes": 5
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_3",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "test_ordinary",
+      "seed": null,
+      "episodes": 15
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "test_stronger",
+      "seed": null,
+      "episodes": 5
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "step_3",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "reversing_3",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_1.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_1.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_1.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_1.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_1.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "severity_2",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "step_1.5",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "reversing_1.5",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "td3-bc",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "easybcq",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "hoflon",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "core-pivot",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "iql",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "cql",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2.5",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_2",
+      "seed": 123,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2.5",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_2",
+      "seed": 124,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2.5",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_2",
+      "seed": 125,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2.5",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_2",
+      "seed": 126,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "severity_2.5",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "step_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "bc",
+      "condition": "reversing_2",
+      "seed": 127,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "severity_2.5",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "step_2",
+      "seed": null,
+      "episodes": 20
+    },
+    {
+      "algorithm": "pd11",
+      "condition": "reversing_2",
+      "seed": null,
+      "episodes": 20
+    }
+  ]
+}

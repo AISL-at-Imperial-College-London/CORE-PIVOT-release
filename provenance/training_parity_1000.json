@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "date": "2026-11-05",
+  "seed": 123,
+  "updates_per_family": 1000,
+  "actual_training_cli_verified": true,
+  "real_replay": true,
+  "replay_rows": 24000000,
+  "source_groups": ["parity1000_0/report.json", "parity1000_1/report.json"],
+  "families": ["bc", "qbeta", "core-pivot", "td3-bc", "iql", "cql"],
+  "checks_for_every_family": {
+    "all_1000_logged_metrics_exact": true,
+    "all_parameters_targets_optimizers_exact": true,
+    "replay_private_global_rng_exact": true,
+    "actual_cli_resume_update_1001_exact": true
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "device": "cpu"
+  },
+  "scope": "Independent archived-kernel process versus the portable train.py CLI, same-runtime and same initial seed/data/sampling protocol. Full source commitments are in training_sources.json.",
+  "not_claimed": [
+    "Historical GPU first-1000 checkpoint equality on different hardware",
+    "New 500k-update training across all five seeds",
+    "Identical SLSQP closed-loop trajectories across platforms"
+  ]
+}

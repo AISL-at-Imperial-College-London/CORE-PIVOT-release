@@ -1,0 +1,221 @@
+{
+  "passed": true,
+  "method": "best-pd",
+  "seed": null,
+  "checkpoint_step": null,
+  "inputs": {},
+  "conditions": [
+    {
+      "id": "validation_ordinary",
+      "family": "split",
+      "stronger": false
+    },
+    {
+      "id": "validation_stronger",
+      "family": "split",
+      "stronger": true
+    }
+  ],
+  "rows": [
+    {
+      "wind_seed": 51020,
+      "condition": "validation_ordinary",
+      "episode_cost": 63.18571233774538,
+      "position_rmse": 0.25583121168337797,
+      "velocity_rmse": 0.30657794750227835,
+      "max_normalized_action": 0.29882800579071045,
+      "wind_sha256": "ab6bb8a3f675ba6a4a18723867f30ccd6eea2a4a3b67b7903f8abf2040c5a718"
+    },
+    {
+      "wind_seed": 51029,
+      "condition": "validation_ordinary",
+      "episode_cost": 79.42295170882609,
+      "position_rmse": 0.2973689241942435,
+      "velocity_rmse": 0.2955418064222026,
+      "max_normalized_action": 0.378471702337265,
+      "wind_sha256": "c7e62c889b6cb3d508652532f71f56e8a9cdeca109485dfd2c658e42638af037"
+    },
+    {
+      "wind_seed": 51034,
+      "condition": "validation_ordinary",
+      "episode_cost": 55.40848094846888,
+      "position_rmse": 0.2304466585307191,
+      "velocity_rmse": 0.32227559766436403,
+      "max_normalized_action": 0.3033878803253174,
+      "wind_sha256": "c35967b019913e8f7696f519a87d708da03b5ff8021886f907113ee67c5fdff2"
+    },
+    {
+      "wind_seed": 51048,
+      "condition": "validation_ordinary",
+      "episode_cost": 66.48583342166224,
+      "position_rmse": 0.2581824479771881,
+      "velocity_rmse": 0.3315840877670108,
+      "max_normalized_action": 0.38340434432029724,
+      "wind_sha256": "ed4ae2f6828a0ef4e3acb4f430d6a60b47765b04866372e1f61ff1baa8b18141"
+    },
+    {
+      "wind_seed": 51055,
+      "condition": "validation_ordinary",
+      "episode_cost": 49.47931455106758,
+      "position_rmse": 0.21696374652573386,
+      "velocity_rmse": 0.30740162731303633,
+      "max_normalized_action": 0.3019173741340637,
+      "wind_sha256": "47af3000f4376421650c379ffdb4c2ee4890a47e9a07b250e7475ec1dd2f64eb"
+    },
+    {
+      "wind_seed": 51057,
+      "condition": "validation_ordinary",
+      "episode_cost": 64.19685757199362,
+      "position_rmse": 0.2574713291057921,
+      "velocity_rmse": 0.3106792943252611,
+      "max_normalized_action": 0.37362563610076904,
+      "wind_sha256": "2fcc936164b168e78eec7f5e6dc53341dde59e330f284f689f581e8f3cad364e"
+    },
+    {
+      "wind_seed": 51067,
+      "condition": "validation_ordinary",
+      "episode_cost": 52.707390062445626,
+      "position_rmse": 0.23047104725674672,
+      "velocity_rmse": 0.29291309683623984,
+      "max_normalized_action": 0.30765393376350403,
+      "wind_sha256": "b58aed30b9dd2e3394e2f1fd211bf9d0996122fdb0ad5e4e99ac5b861cf6a60c"
+    },
+    {
+      "wind_seed": 51069,
+      "condition": "validation_ordinary",
+      "episode_cost": 66.66141517792204,
+      "position_rmse": 0.26244557239695987,
+      "velocity_rmse": 0.31626103485197266,
+      "max_normalized_action": 0.3685103952884674,
+      "wind_sha256": "906af4ddff08bceee4ea292564def6627ff3ef190bf9232006dd120670d37c60"
+    },
+    {
+      "wind_seed": 51091,
+      "condition": "validation_ordinary",
+      "episode_cost": 111.93537587469504,
+      "position_rmse": 0.3590591679503472,
+      "velocity_rmse": 0.318776424345741,
+      "max_normalized_action": 0.4642086923122406,
+      "wind_sha256": "58acbcd9d82ee015b8e0048d015a7728b88ab9c3a2a0d1a4426a6aa31357a95d"
+    },
+    {
+      "wind_seed": 51094,
+      "condition": "validation_ordinary",
+      "episode_cost": 74.38166254815897,
+      "position_rmse": 0.28559586174105867,
+      "velocity_rmse": 0.29673686845919633,
+      "max_normalized_action": 0.4034079909324646,
+      "wind_sha256": "14a902aa863fc15c8dafc3a32f9a624b66c5a101d840722c54ae2d5b035bde1f"
+    },
+    {
+      "wind_seed": 51107,
+      "condition": "validation_ordinary",
+      "episode_cost": 74.36334094032996,
+      "position_rmse": 0.28266623406253405,
+      "velocity_rmse": 0.31024926570966993,
+      "max_normalized_action": 0.3103926479816437,
+      "wind_sha256": "6a1789c5261c1b6eeba3a15eb05e17843778b877614e87756805e6830c650597"
+    },
+    {
+      "wind_seed": 51115,
+      "condition": "validation_ordinary",
+      "episode_cost": 55.3200940109602,
+      "position_rmse": 0.23046071201400364,
+      "velocity_rmse": 0.3213097070269226,
+      "max_normalized_action": 0.3309309780597687,
+      "wind_sha256": "9f07625bd224a7966a8c42eb6376b095c108202de356da43b8e1d08d0dd37692"
+    },
+    {
+      "wind_seed": 51122,
+      "condition": "validation_ordinary",
+      "episode_cost": 72.69344847508414,
+      "position_rmse": 0.27798088701201423,
+      "velocity_rmse": 0.31345832596050577,
+      "max_normalized_action": 0.3631190061569214,
+      "wind_sha256": "ddab71e03e7587ba0583d02e6a68a00784fb67808625bd31df9c858d3335ce6d"
+    },
+    {
+      "wind_seed": 51124,
+      "condition": "validation_ordinary",
+      "episode_cost": 51.17040245626024,
+      "position_rmse": 0.2216061822775555,
+      "velocity_rmse": 0.3091755427858135,
+      "max_normalized_action": 0.2979919910430908,
+      "wind_sha256": "45995695d70c07b4d71d1ef6fd68474b3be983006ed9abe1225bdd64a7139f2a"
+    },
+    {
+      "wind_seed": 51138,
+      "condition": "validation_ordinary",
+      "episode_cost": 71.3729637841758,
+      "position_rmse": 0.2784841896621387,
+      "velocity_rmse": 0.2967364809090401,
+      "max_normalized_action": 0.3171312212944031,
+      "wind_sha256": "314322dc5b7408fc84ace50ab84084e47749c9cc83f1399eeb0295e7f0e4dd4d"
+    },
+    {
+      "wind_seed": 51139,
+      "condition": "validation_stronger",
+      "episode_cost": 138.45986672200118,
+      "position_rmse": 0.4025311472240164,
+      "velocity_rmse": 0.33601957639289637,
+      "max_normalized_action": 0.3277927041053772,
+      "wind_sha256": "7b19bed940e7ced6db5153feb3db22a88a80120678286172c2552bdba06137f3"
+    },
+    {
+      "wind_seed": 51148,
+      "condition": "validation_stronger",
+      "episode_cost": 134.6022800750511,
+      "position_rmse": 0.39421904519676654,
+      "velocity_rmse": 0.3468504805451812,
+      "max_normalized_action": 0.4665783643722534,
+      "wind_sha256": "bc0655006a502aeb12859227911eb2bae3284478e06100b67c6ab0e32a07fc8b"
+    },
+    {
+      "wind_seed": 51170,
+      "condition": "validation_stronger",
+      "episode_cost": 120.6244353188363,
+      "position_rmse": 0.3634423667742183,
+      "velocity_rmse": 0.37909251152370166,
+      "max_normalized_action": 0.33014872670173645,
+      "wind_sha256": "9d58a6c6b067287640c38e1956852fc26e065dd30c9c51c4b9407e7a758daeae"
+    },
+    {
+      "wind_seed": 51183,
+      "condition": "validation_stronger",
+      "episode_cost": 173.1734142628361,
+      "position_rmse": 0.4567386934484704,
+      "velocity_rmse": 0.33382369291862596,
+      "max_normalized_action": 0.5169994831085205,
+      "wind_sha256": "1aaedf7821fb9816b3c2258df4e1b8c33818b9fbda1368b8e03ee5bd1a5fb0f1"
+    },
+    {
+      "wind_seed": 51196,
+      "condition": "validation_stronger",
+      "episode_cost": 132.6419868098292,
+      "position_rmse": 0.3910759927078448,
+      "velocity_rmse": 0.345800161514416,
+      "max_normalized_action": 0.4386066198348999,
+      "wind_sha256": "8e307ed92abbed77ca82cb17432193c8c404e1550abf02031d8d0022b60b02f3"
+    }
+  ],
+  "network_updates": 0,
+  "evaluation_batch": "new_reproduction_run_not_pooled_with_paper_exports",
+  "partial_diagnostic": false,
+  "held_out_test_accessed": false,
+  "search": {
+    "candidates": 100,
+    "radius": 0.1,
+    "iterations": 40,
+    "core_rng": "9001 + wind_seed; reset each episode",
+    "other_rng": "checkpoint state; reset each episode"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "device": "cpu",
+    "seconds": 1.734000000054948
+  },
+  "reproducibility_note": "Original HPC solver runtime: Python3.12.3, torch2.9.1+cu130, numpy2.5.1, scipy1.18.0. Cross-platform SLSQP equality is not guaranteed."
+}

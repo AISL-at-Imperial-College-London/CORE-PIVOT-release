@@ -1,0 +1,20 @@
+{
+  "algorithm": "cql-backup",
+  "backup": "sarsa",
+  "steps": 500000,
+  "checkpoint_every": 10000,
+  "config": {
+    "batch_size": 256,
+    "actor_learning_rate": 1e-05,
+    "critic_learning_rate": 3e-05,
+    "multiplier_learning_rate": 0.0001,
+    "discount": 0.99,
+    "tau": 0.005,
+    "entropy_temperature": 0.1,
+    "conservative_weight": 1.0,
+    "lagrange": true,
+    "initial_multiplier": 0.5,
+    "target_gap": 30.0,
+    "samples": 10
+  }
+}

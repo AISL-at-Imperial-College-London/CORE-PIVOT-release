@@ -1,0 +1,21 @@
+{
+  "condition": "reversing_1.5",
+  "description": "Full saved reversing-gust rollout; web-resolution display",
+  "fps": 20,
+  "width": 800,
+  "height": 500,
+  "frame_count": 401,
+  "duration_seconds": 20.05,
+  "physical_horizon_seconds": 15,
+  "loop": true,
+  "source_manifest": "assets/demo_trajectories/manifest.json",
+  "source_sha256": {
+    "rollout_12.npz": "8c84a80c4ddcee1e75cfd6dca1a48dac18c8311db67efc7aa40bb00922142bc4",
+    "rollout_13.npz": "90a2f430f7c1bfaf3042668f95d8030dac786ee28ad390d19fbf5a22c535b8f7",
+    "rollout_14.npz": "39d1ac63934704c46e06f868aded1d046e93df8eba55e0f7dbd9631726bc7cea",
+    "rollout_15.npz": "f5d1453ec54503309c0f8f03d0286dae4d6c702066b263fc83060b6bbb2b9780"
+  },
+  "sha256": "bcaaff428aef8e4920079658ae2fd72cab15b280056e24138c1bbb21de30be4c",
+  "bytes": 2485568,
+  "notes": "Matched seed 123; illustrative yaw. Gust onset/reversal are preserved, with labelled slower playback around the events. No simulation or training rerun."
+}

@@ -1,0 +1,19 @@
+name: Reproduction checks
+on:
+  workflow_dispatch:
+  pull_request:
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e ".[figures,demo]"
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/prepare_data.py --smoke --output data/smoke
+      - run: python scripts/train.py --algorithm iql --data-dir data/smoke --seed 123 --steps 10 --checkpoint-every 10 --smoke-data --output runs/ci_iql
+      - run: python scripts/reproduce_paper.py
+      - run: python scripts/animate.py --preview

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "seed": 123,
+  "rows": 24000000,
+  "arms": [
+    {
+      "backup": "actor",
+      "updates": 1000,
+      "metrics_bitwise_equal": true,
+      "model_optimizer_rng_bitwise_equal": true,
+      "replay_rng_equal": true,
+      "elapsed_seconds": 350.06200000003446
+    },
+    {
+      "backup": "sarsa",
+      "updates": 1000,
+      "metrics_bitwise_equal": true,
+      "model_optimizer_rng_bitwise_equal": true,
+      "replay_rng_equal": true,
+      "elapsed_seconds": 334.4529999999795
+    }
+  ],
+  "source_loss_exact": true,
+  "vendor_diff_is_only_four_line_backup_intervention": true,
+  "actor_entropy": 0.1,
+  "target_entropy": false,
+  "conservative_weight": 1.0,
+  "adaptive_target_gap": 30.0,
+  "fresh_arm_initialization_and_replay_stream_matched": true,
+  "serialized_resume_unit_test_passed": true,
+  "actual_cli_saved_resume_2_to_3_updates_passed": true,
+  "reference_kernel_sha256": "bb28215226a4e211ddff7ef0ece8c89fc0d168541c5b0789c9b844a53d4bdfa2",
+  "initial_state_sha256": "488335fe1e5b4ada5df68dc142bb970214398e511db22b6504e962ac155fe9e9",
+  "data_manifest_sha256": "e3652525160403da704615998fb48d39bbf3624f9fa3e465a59b5ca7f53b28c4",
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "device": "cpu"
+  },
+  "claim": "Same-runtime archived-kernel equivalence, not historical CUDA bitwise replay."
+}

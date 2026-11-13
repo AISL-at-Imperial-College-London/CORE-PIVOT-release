@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "core-pivot-repro"
+version = "0.1.0"
+description = "Reproducible offline control under changing disturbances"
+readme = "README.md"
+license = "MIT AND Apache-2.0"
+license-files = ["LICENSE", "NOTICE.md", "algorithms/corl_vendor/LICENSE", "algorithms/corl_vendor/third_party/*_LICENSE.txt"]
+requires-python = ">=3.12,<3.13"
+authors = [
+  {name = "Christos Evripidou"},
+]
+classifiers = ["Private :: Do Not Upload"]
+dependencies = [
+  "numpy>=2.0,<3",
+  "torch>=2.9,<3",
+  "scipy>=1.14,<2",
+  "gymnasium>=1.0,<2",
+  "pandas>=3.0,<4",
+]
+
+[project.optional-dependencies]
+figures = ["matplotlib>=3.9,<4", "pypdf>=6,<7"]
+demo = ["matplotlib>=3.9,<4", "imageio-ffmpeg>=0.6,<1"]
+
+[dependency-groups]
+review = ["matplotlib>=3.9,<4", "imageio-ffmpeg>=0.6,<1", "pypdf>=6,<7"]
+
+[tool.uv]
+required-version = ">=0.13.7"
+default-groups = ["review"]
+constraint-dependencies = ["torch==2.9.1"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform != 'darwin'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.setuptools]
+py-modules = ["core_pivot_truncated_20261019"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["algorithms*", "datasets*", "environments*", "training*", "evaluation*", "extraction*", "ablations*", "demo*"]
+
+[tool.setuptools.package-data]
+"algorithms.corl_vendor" = ["LICENSE", "provenance.json"]

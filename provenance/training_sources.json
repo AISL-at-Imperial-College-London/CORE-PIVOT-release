@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "scope": "Numerical kernels retained byte-for-byte from archived paper execution packets; orchestration is newly portable. The non-numerical vendor package marker has LF-normalized line endings, explicitly recorded below.",
+  "source_packets": {
+    "main": "hpc_selected_cpu_test_20261022",
+    "corl": "hpc_selected_iql_cql_seeds125127_20261022",
+    "bc_training": "hpc_bc25_truncated_rng_retry_20261017/truncated; production hpc_bc25_combined_production_20261017/truncated/train.py",
+    "qbeta_training": "run_qbeta_only_corrected_20261017.py; 10k checkpoint extension preserves updates",
+    "core_training": "core_pivot_truncated_20261019.py; queue_core001_seeds125127_20261021.py"
+  },
+  "kernels": [
+    {
+      "file": "algorithms/action_search.py",
+      "sha256": "7e889a06f243cbeab714bf73c1409c26dd3ddc1a97acd35360e7baff440e8087"
+    },
+    {
+      "file": "algorithms/conservative.py",
+      "sha256": "6db4c62eea17abe7b78f7cabb677b106f46ad0845c889f9d778823044940d178"
+    },
+    {
+      "file": "algorithms/core_pivot.py",
+      "sha256": "3b9fa5569368986786da3220ede0446e0b88be5aab7758351549c4a9ec4f95d4"
+    },
+    {
+      "file": "algorithms/corl_baselines.py",
+      "sha256": "4d4726689b84cb1c5c5f0cb6da4cc1f220af7d7f116cee953291b76f9c752d88"
+    },
+    {
+      "file": "algorithms/holfon_rho_easy_bcq.py",
+      "sha256": "ffa0c57639a67de72ffdda6e77fd10460a83e3c04d4271ce5ed3c030fcd697af"
+    },
+    {
+      "file": "algorithms/networks.py",
+      "sha256": "fadb83177b324097e322d66051cc113e502feccc226671d03d2df4f36ac4a2a5"
+    },
+    {
+      "file": "algorithms/offline.py",
+      "sha256": "e16907257becc0abda8cd878d41ce64b7a7c8c45ce1879765eef6a397133d7fb"
+    },
+    {
+      "file": "algorithms/one_step_easy_bcq.py",
+      "sha256": "ab05f6b033e610bf054f5b5fa5d627384e12914757b4d07125ec74797718a403"
+    },
+    {
+      "file": "algorithms/qbeta_recorded_action_20261017.py",
+      "sha256": "5001e05e4667fac2d004a0a03ef5a3c815aba885ba28711e9bb2562721626a4a"
+    },
+    {
+      "file": "algorithms/squashed_bc.py",
+      "sha256": "f3143d83b27727dd730d30ca12a619ee688d74daf8504c559b46385d250bf518"
+    },
+    {
+      "file": "algorithms/truncated_bc.py",
+      "sha256": "bba4ba6db7efbf598b32f78a9dd8859e02ed2265b3496ad593d8b6a148dde808"
+    },
+    {
+      "file": "algorithms/corl_vendor/__init__.py",
+      "sha256": "8b6c7089e23337c5249022719dc659aa30a9da5c1ca1be17c3e469aa4d2576c8",
+      "historical_sha256": "9cec1633c8a77522e7ab4e3f9b7e458697d012cd18c3bf005de04fe6e10c036e",
+      "transformation": "CRLF to LF only; package docstring, no executable numerical code"
+    },
+    {
+      "file": "algorithms/corl_vendor/cql.py",
+      "sha256": "45457e3dbb62d3c104e6b0f8a38151af063f81cac50049b79f6086651a19dc7d"
+    },
+    {
+      "file": "algorithms/corl_vendor/iql.py",
+      "sha256": "9fedb6d51195b7a488bfd5f994d3c4408b78e1b72307f1f9ee39df885172c4dd"
+    },
+    {
+      "file": "algorithms/corl_vendor/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "file": "algorithms/corl_vendor/provenance.json",
+      "sha256": "8058326475aba735a77d4447ef6b829d0a8479622980a30b9b8518eb103e059c"
+    },
+    {
+      "file": "algorithms/corl_vendor/td3_bc.py",
+      "sha256": "358c1d2264fe93ad6bb5b7e3582c003b92dbd2f4f680b8c519ce722376ad3608"
+    }
+  ],
+  "corl_upstream_commit": "6afec90484bbf47dee05fdf525e26a3ebe028e9b",
+  "corl_license": "Apache-2.0; see algorithms/corl_vendor/LICENSE",
+  "distinctions": [
+    "No use of the obsolete October-9 clean rewrite.",
+    "BC uses native truncated-normal MLE with replacement, not the later shuffled-epoch trainer.",
+    "The fixed state-consistent previous-action augmentation is applied once during data preparation, not again during training.",
+    "Q_beta uses a single critic and replay seed+20000; other main families use replay seed+10000.",
+    "CORE uses its truncated proposal adapter, not the squashed-BC default base class.",
+    "Main CQL and the later paired backup experiment have distinct random-number protocols; do not substitute one runner for the other.",
+    "Release source uses LF. Any line-ending-only transformation is recorded with both historical and release hashes."
+  ],
+  "historical_runtime": {
+    "python": "3.12.3 (Linux HPC); 3.12.x local",
+    "torch": "2.9.1+cu130",
+    "numpy": "2.5.1",
+    "scipy_cpu_search": "1.18.0",
+    "gymnasium": "1.0.0"
+  },
+  "claim": "Same numerical kernels plus verified same-runtime migration parity do not guarantee bitwise GPU or cross-platform search reproduction."
+}

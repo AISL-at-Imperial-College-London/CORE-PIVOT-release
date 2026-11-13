@@ -1,0 +1,562 @@
+[
+  {
+    "group": "TD3-BC",
+    "parameter": 0.5,
+    "selected_common_step": 380000,
+    "per_seed_costs": [
+      [
+        28.6071256528119,
+        62.43842701990472
+      ],
+      [
+        29.839145991735773,
+        72.19290309482304
+      ]
+    ],
+    "used_setting": true
+  },
+  {
+    "group": "TD3-BC",
+    "parameter": 1.0,
+    "selected_common_step": 400000,
+    "per_seed_costs": [
+      [
+        47.41601141413878,
+        106.48206382721791
+      ],
+      [
+        34.62303093005645,
+        94.92096807941795
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "TD3-BC",
+    "parameter": 2.0,
+    "selected_common_step": 210000,
+    "per_seed_costs": [
+      [
+        130.71803201625102,
+        189.8015760484871
+      ],
+      [
+        184.35618893217114,
+        244.7176315581346
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "TD3-BC",
+    "parameter": 4.0,
+    "selected_common_step": 400000,
+    "per_seed_costs": [
+      [
+        386568.02008232294,
+        378404.5898493665
+      ],
+      [
+        985870.7011357552,
+        1472464.4586438942
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "EasyBCQ",
+    "parameter": 1,
+    "selected_common_step": 0,
+    "per_seed_costs": [
+      [
+        149.5779980151366,
+        1490.2137399885482
+      ],
+      [
+        306.93657544325504,
+        1478.0860649018919
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "EasyBCQ",
+    "parameter": 10,
+    "selected_common_step": 50000,
+    "per_seed_costs": [
+      [
+        65.12728522114264,
+        1272.4846422425555
+      ],
+      [
+        59.09855636627311,
+        1098.6522594163453
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "EasyBCQ",
+    "parameter": 50,
+    "selected_common_step": 200000,
+    "per_seed_costs": [
+      [
+        52.67474793408909,
+        983.6463770948172
+      ],
+      [
+        50.73470765518353,
+        922.0402025449563
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "EasyBCQ",
+    "parameter": 100,
+    "selected_common_step": 175000,
+    "per_seed_costs": [
+      [
+        50.442655753588106,
+        942.0002479430725
+      ],
+      [
+        48.632454518676816,
+        895.4428878862234
+      ]
+    ],
+    "used_setting": true
+  },
+  {
+    "group": "Hoflon",
+    "parameter": 0.05,
+    "selected_common_step": 180000,
+    "per_seed_costs": [
+      [
+        37.588652250939894,
+        618.973912180373
+      ],
+      [
+        36.825994284624485,
+        459.07570898043303
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "Hoflon",
+    "parameter": 0.1,
+    "selected_common_step": 40000,
+    "per_seed_costs": [
+      [
+        30.874985435502413,
+        487.817587232227
+      ],
+      [
+        29.403939799537948,
+        400.0863348336089
+      ]
+    ],
+    "used_setting": true
+  },
+  {
+    "group": "Hoflon",
+    "parameter": 0.25,
+    "selected_common_step": 30000,
+    "per_seed_costs": [
+      [
+        36.03485481072484,
+        344.7627765906389
+      ],
+      [
+        39.31059725139645,
+        205.57460269947984
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "Hoflon",
+    "parameter": 1.0,
+    "selected_common_step": 490000,
+    "per_seed_costs": [
+      [
+        294.50155251973433,
+        397.3924936290234
+      ],
+      [
+        219.98521206783457,
+        288.7110407668064
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 0.0,
+    "selected_common_step": 360000,
+    "per_seed_costs": [
+      [
+        29513.527014151336,
+        25087.37033873557
+      ],
+      [
+        260313.67515009732,
+        368150.9589193241
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 0.01,
+    "selected_common_step": 200000,
+    "per_seed_costs": [
+      [
+        40.09698129208831,
+        72.17179913983811
+      ],
+      [
+        41.373083965548204,
+        54.4145895576567
+      ]
+    ],
+    "used_setting": true
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 0.05,
+    "selected_common_step": 470000,
+    "per_seed_costs": [
+      [
+        78.97848636112806,
+        121.29693805220309
+      ],
+      [
+        55.38106284373422,
+        90.62041350226853
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 0.1,
+    "selected_common_step": 390000,
+    "per_seed_costs": [
+      [
+        59.55432611323857,
+        111.32616074718992
+      ],
+      [
+        73.48993566850552,
+        105.71362859060677
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 0.5,
+    "selected_common_step": 160000,
+    "per_seed_costs": [
+      [
+        84.58931104961967,
+        177.19404718902814
+      ],
+      [
+        80.3133947701379,
+        1666.351303201669
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CORE-PIVOT",
+    "parameter": 1.0,
+    "selected_common_step": 420000,
+    "per_seed_costs": [
+      [
+        89.57331929277551,
+        228.2122491705483
+      ],
+      [
+        78.89016970580495,
+        181.51984705252306
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.9",
+    "parameter": 3.0,
+    "selected_common_step": 380000,
+    "per_seed_costs": [
+      [
+        72.52195388487152,
+        365.3174441596921
+      ],
+      [
+        69.36675359881876,
+        586.2976811799095
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.9",
+    "parameter": 5.0,
+    "selected_common_step": 230000,
+    "per_seed_costs": [
+      [
+        60.74643701206239,
+        395.525859522945
+      ],
+      [
+        76.00247565612635,
+        550.2546226783569
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.9",
+    "parameter": 10.0,
+    "selected_common_step": 160000,
+    "per_seed_costs": [
+      [
+        59.15525331746577,
+        483.234149515044
+      ],
+      [
+        62.047226430680425,
+        505.4068335509155
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.9",
+    "parameter": 30.0,
+    "selected_common_step": 250000,
+    "per_seed_costs": [
+      [
+        64.6679006732121,
+        559.7162108650393
+      ],
+      [
+        54.46546453275258,
+        9040.960050392801
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.98",
+    "parameter": 3.0,
+    "selected_common_step": 430000,
+    "per_seed_costs": [
+      [
+        80.41850799407453,
+        561.0288037070987
+      ],
+      [
+        81.96384795370574,
+        502.293084718326
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.98",
+    "parameter": 5.0,
+    "selected_common_step": 330000,
+    "per_seed_costs": [
+      [
+        70.88048584168932,
+        406.7646979068974
+      ],
+      [
+        78.790270720346,
+        437.68480269034046
+      ]
+    ],
+    "used_setting": true
+  },
+  {
+    "group": "IQL 0.98",
+    "parameter": 10.0,
+    "selected_common_step": 300000,
+    "per_seed_costs": [
+      [
+        66.40117814402541,
+        609.5167089296011
+      ],
+      [
+        65.84658692805979,
+        923.8324518662881
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "IQL 0.98",
+    "parameter": 30.0,
+    "selected_common_step": 270000,
+    "per_seed_costs": [
+      [
+        57.104471837449196,
+        7176.884041714569
+      ],
+      [
+        61.24237680831184,
+        803176.1526439764
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL fixed",
+    "parameter": 0.01,
+    "selected_common_step": 500000,
+    "per_seed_costs": [
+      [
+        54.54282449242703,
+        193.29233885278956
+      ],
+      [
+        48.17655418700505,
+        173.04825168104043
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL fixed",
+    "parameter": 0.05,
+    "selected_common_step": 480000,
+    "per_seed_costs": [
+      [
+        54.55099217984063,
+        323.8146079093863
+      ],
+      [
+        62.44609349504491,
+        229.1343524613958
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL fixed",
+    "parameter": 0.1,
+    "selected_common_step": 470000,
+    "per_seed_costs": [
+      [
+        64.44913323562893,
+        418.46216915266876
+      ],
+      [
+        57.319194429938904,
+        361.96484645538703
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL fixed",
+    "parameter": 0.5,
+    "selected_common_step": 440000,
+    "per_seed_costs": [
+      [
+        85.91874759749366,
+        456.2565259982116
+      ],
+      [
+        84.29883282095439,
+        334.65387673970775
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL fixed",
+    "parameter": 1.0,
+    "selected_common_step": 500000,
+    "per_seed_costs": [
+      [
+        110.31382931783793,
+        744.728795134842
+      ],
+      [
+        87.39436691837844,
+        421.2558731623459
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL adaptive",
+    "parameter": 1.0,
+    "selected_common_step": 360000,
+    "per_seed_costs": [
+      [
+        39.75636705887776,
+        161.0992338622619
+      ],
+      [
+        39.90208786310406,
+        149.76247408746423
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL adaptive",
+    "parameter": 5.0,
+    "selected_common_step": 330000,
+    "per_seed_costs": [
+      [
+        45.292030972641776,
+        137.87503187791202
+      ],
+      [
+        47.99862343608959,
+        146.77060525613857
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL adaptive",
+    "parameter": 10.0,
+    "selected_common_step": 450000,
+    "per_seed_costs": [
+      [
+        48.17030132156239,
+        150.11803511270082
+      ],
+      [
+        37.36860052654613,
+        155.0783529441726
+      ]
+    ],
+    "used_setting": false
+  },
+  {
+    "group": "CQL adaptive",
+    "parameter": 30.0,
+    "selected_common_step": 340000,
+    "per_seed_costs": [
+      [
+        38.43198308742614,
+        155.53816225401746
+      ],
+      [
+        34.53103226220174,
+        151.8840001443713
+      ]
+    ],
+    "used_setting": true
+  }
+]

@@ -1,0 +1,619 @@
+{
+  "passed": true,
+  "experiment": "Actor-backup CQL versus recorded-action CQL; both deployed through their trained actors",
+  "seeds": [
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "steps": [
+    0,
+    10000,
+    20000,
+    30000,
+    40000,
+    50000,
+    60000,
+    70000,
+    80000,
+    90000,
+    100000,
+    110000,
+    120000,
+    130000,
+    140000,
+    150000,
+    160000,
+    170000,
+    180000,
+    190000,
+    200000,
+    210000,
+    220000,
+    230000,
+    240000,
+    250000,
+    260000,
+    270000,
+    280000,
+    290000,
+    300000,
+    310000,
+    320000,
+    330000,
+    340000,
+    350000,
+    360000,
+    370000,
+    380000,
+    390000,
+    400000,
+    410000,
+    420000,
+    430000,
+    440000,
+    450000,
+    460000,
+    470000,
+    480000,
+    490000,
+    500000
+  ],
+  "evaluations": 510,
+  "validation_episodes": 10200,
+  "new_evaluations": 153,
+  "new_episodes": 3060,
+  "step_zero_episode_costs_bitwise_equal": {
+    "123": true,
+    "124": true,
+    "125": true,
+    "126": true,
+    "127": true
+  },
+  "paired_initialization_design": true,
+  "matched_winds_per_checkpoint": true,
+  "source_hashes": {
+    "original_two_seed_backup_experiment": {
+      "artifact": "comparison.json",
+      "sha256": "cfa7c4d3761dfbe46545ca121e21c8a3987006ff45fefc9a1ec155f277a8a384"
+    },
+    "sarsa_seeds125127": {
+      "artifact": "sarsa_cql_seeds125127_validation.json",
+      "sha256": "12e30cf5835afb3599f2f8063fd54c71cf6789435d527f3d01c081ddfa48608e"
+    },
+    "new_actor_controls": {
+      "artifact": "validation_summary.json",
+      "sha256": "3ce37e54ba4a0e538136419257dcfa4ef9a421c5294e636d4565bed3d0b335da"
+    }
+  },
+  "archive_sha256": "dd048e806cd0def4c9212ae4549e25f82858525b18ff21b203f6651bb76090d1",
+  "new_package_sha256": "afeab06768f38a7d169fad606491fe1af091381f6071171aa4584cc2097a2d6b",
+  "new_training_evidence": {
+    "125": {
+      "passed": true,
+      "initial_sha256": "286226350459aa5f5e5bd2ac885d62d4f38dabe71ba65880f9e4178053519990",
+      "gpu": "NVIDIA L40S",
+      "config": {
+        "batch_size": 256,
+        "actor_learning_rate": 1e-05,
+        "critic_learning_rate": 3e-05,
+        "multiplier_learning_rate": 0.0001,
+        "discount": 0.99,
+        "tau": 0.005,
+        "entropy_temperature": 0.1,
+        "conservative_weight": 1.0,
+        "lagrange": true,
+        "initial_multiplier": 0.5,
+        "target_gap": 30.0,
+        "samples": 10
+      },
+      "elapsed_hours": 3.24410101285463,
+      "source_evidence_sha256": {
+        "origin.json": "d08c8666794c6eb9ea4355ed5cc960dd96712bed28630aadad754591d298442f",
+        "preflight.json": "3d8812ae1907192807196134ac2ed2cb6371da0ae31171c4cfe8efc8cbcc57af",
+        "real_replay_preflight.json": "8dbe02b403b731886fb6e078b3ec1cd36f992d611f0d66c86966e6d98ef15253",
+        "report.json": "e7ee0e782e2b5032b33934e59260ffc8305fdc349ac7ab8f318fb98a82b0c1a4",
+        "runtime.json": "57f643746be24ab089737222e4d458d382fabe847f2bc03854993f0dca510aa6"
+      }
+    },
+    "126": {
+      "passed": true,
+      "initial_sha256": "7066929b4ffd6c4dd235df83e93dffc77998dce9e352ee8c0657d41e8bab499e",
+      "gpu": "NVIDIA L40S",
+      "config": {
+        "batch_size": 256,
+        "actor_learning_rate": 1e-05,
+        "critic_learning_rate": 3e-05,
+        "multiplier_learning_rate": 0.0001,
+        "discount": 0.99,
+        "tau": 0.005,
+        "entropy_temperature": 0.1,
+        "conservative_weight": 1.0,
+        "lagrange": true,
+        "initial_multiplier": 0.5,
+        "target_gap": 30.0,
+        "samples": 10
+      },
+      "elapsed_hours": 3.325096668118624,
+      "source_evidence_sha256": {
+        "origin.json": "64d5a85b12980bb0b24685ca0b0a8987382f0e2adc2ced8e4bca83dca01d1ca8",
+        "preflight.json": "3d8812ae1907192807196134ac2ed2cb6371da0ae31171c4cfe8efc8cbcc57af",
+        "real_replay_preflight.json": "8dbe02b403b731886fb6e078b3ec1cd36f992d611f0d66c86966e6d98ef15253",
+        "report.json": "f2b6ebfe66946a3d36baf24bd6c15e40f6d2adedf997769944c58f59d796d56c",
+        "runtime.json": "f53a32fb171451315f1e01e97ea81adde69ff4e91a0279c5952ba2b8f10d6fb4"
+      }
+    },
+    "127": {
+      "passed": true,
+      "initial_sha256": "c2e9338c27b9e2d5c6aba67f6529023d35b214433812ff397aa35fa68af7c009",
+      "gpu": "NVIDIA L40S",
+      "config": {
+        "batch_size": 256,
+        "actor_learning_rate": 1e-05,
+        "critic_learning_rate": 3e-05,
+        "multiplier_learning_rate": 0.0001,
+        "discount": 0.99,
+        "tau": 0.005,
+        "entropy_temperature": 0.1,
+        "conservative_weight": 1.0,
+        "lagrange": true,
+        "initial_multiplier": 0.5,
+        "target_gap": 30.0,
+        "samples": 10
+      },
+      "elapsed_hours": 3.247113767569471,
+      "source_evidence_sha256": {
+        "origin.json": "9df986373fcc98fe1b6d67ad3699af0ae1fd71b083fed69e9fd0ed782fe43213",
+        "preflight.json": "3d8812ae1907192807196134ac2ed2cb6371da0ae31171c4cfe8efc8cbcc57af",
+        "real_replay_preflight.json": "8dbe02b403b731886fb6e078b3ec1cd36f992d611f0d66c86966e6d98ef15253",
+        "report.json": "c11f79120c10a9ff6ada325dae3498dff2f5bdd63af84ff7c529fde8cd504a11",
+        "runtime.json": "a0f8c5604851aca4fbe395da8d94d37aaf15151bf4090c4f2aad3589079b1022"
+      }
+    }
+  },
+  "generated_files": {
+    "results/paper_data/paired_cql_validation.npz": "33c3670bc4bf0c45b5f53b9e1d56937ed36f2e9a7cff3b1bd0434ea2808ca359"
+  },
+  "aggregation": "Mean over 15 ordinary or 5 stronger winds within each seed, then mean and min-max across five seed means.",
+  "caveats": [
+    "Validation only; original test/robustness CQL baseline is unchanged.",
+    "Hyperparameters and initial states are matched; learned adaptive conservative multipliers and actor proposals may diverge as consequences of the backup intervention.",
+    "This download contains evaluation results and training records, not full checkpoint tensors; no independent rollouts or training were rerun."
+  ],
+  "snapshots": {
+    "10000": {
+      "ordinary": {
+        "paired_cql": {
+          "mean": 168.23496051414088,
+          "sample_sd": 8.753873212507681,
+          "minimum": 156.43159958402086,
+          "maximum": 176.54436651287907,
+          "seed_means": {
+            "123": 172.58549778014907,
+            "124": 156.43159958402086,
+            "125": 176.54436651287907,
+            "126": 174.08606368199918,
+            "127": 161.52727501165637
+          }
+        },
+        "sarsa_cql": {
+          "mean": 130.53401071035987,
+          "sample_sd": 9.592702775440205,
+          "minimum": 117.25977807340611,
+          "maximum": 140.20596316698888,
+          "seed_means": {
+            "123": 117.25977807340611,
+            "124": 134.77042167652024,
+            "125": 136.54859719224999,
+            "126": 140.20596316698888,
+            "127": 123.88529344263421
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -37.70094980378102,
+          "per_seed": {
+            "123": -55.32571970674296,
+            "124": -21.661177907500615,
+            "125": -39.99576932062908,
+            "126": -33.8801005150103,
+            "127": -37.641981569022164
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -22.409699915263502
+        }
+      },
+      "stronger": {
+        "paired_cql": {
+          "mean": 567.3750222232044,
+          "sample_sd": 58.36401218401922,
+          "minimum": 511.22723132742806,
+          "maximum": 660.8553201396496,
+          "seed_means": {
+            "123": 534.4152792372602,
+            "124": 583.0546129122328,
+            "125": 511.22723132742806,
+            "126": 547.3226674994511,
+            "127": 660.8553201396496
+          }
+        },
+        "sarsa_cql": {
+          "mean": 487.01541064197335,
+          "sample_sd": 60.81570185923274,
+          "minimum": 429.8244792839856,
+          "maximum": 562.162469240114,
+          "seed_means": {
+            "123": 433.98396071170265,
+            "124": 539.5447960969067,
+            "125": 429.8244792839856,
+            "126": 469.56134787715774,
+            "127": 562.162469240114
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -80.35961158123101,
+          "per_seed": {
+            "123": -100.43131852555751,
+            "124": -43.509816815326076,
+            "125": -81.40275204344243,
+            "126": -77.76131962229334,
+            "127": -98.69285089953564
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -14.163403116751539
+        }
+      }
+    },
+    "50000": {
+      "ordinary": {
+        "paired_cql": {
+          "mean": 62.09034728072978,
+          "sample_sd": 2.8769033660415486,
+          "minimum": 57.358365277598224,
+          "maximum": 64.95648030692729,
+          "seed_means": {
+            "123": 61.934722827962624,
+            "124": 57.358365277598224,
+            "125": 63.56612341571092,
+            "126": 62.636044575449844,
+            "127": 64.95648030692729
+          }
+        },
+        "sarsa_cql": {
+          "mean": 41.392711165575264,
+          "sample_sd": 4.147376459628171,
+          "minimum": 37.093088377175945,
+          "maximum": 47.82205489908697,
+          "seed_means": {
+            "123": 37.093088377175945,
+            "124": 42.292759807691205,
+            "125": 41.21571081975937,
+            "126": 38.539941924162825,
+            "127": 47.82205489908697
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -20.697636115154516,
+          "per_seed": {
+            "123": -24.841634450786678,
+            "124": -15.06560546990702,
+            "125": -22.350412595951546,
+            "126": -24.09610265128702,
+            "127": -17.134425407840318
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -33.334708246314136
+        }
+      },
+      "stronger": {
+        "paired_cql": {
+          "mean": 195.24721651417627,
+          "sample_sd": 31.313659886889575,
+          "minimum": 161.58010395655486,
+          "maximum": 245.87710552644594,
+          "seed_means": {
+            "123": 185.5807267654539,
+            "124": 184.34434612378442,
+            "125": 161.58010395655486,
+            "126": 245.87710552644594,
+            "127": 198.85380019864226
+          }
+        },
+        "sarsa_cql": {
+          "mean": 55.73190805441021,
+          "sample_sd": 9.421059776630319,
+          "minimum": 47.84480565401534,
+          "maximum": 69.70562545821697,
+          "seed_means": {
+            "123": 47.84480565401534,
+            "124": 48.079241626760094,
+            "125": 52.16954857537321,
+            "126": 60.86031895768544,
+            "127": 69.70562545821697
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -139.5153084597661,
+          "per_seed": {
+            "123": -137.73592111143856,
+            "124": -136.2651044970243,
+            "125": -109.41055538118165,
+            "126": -185.0167865687605,
+            "127": -129.1481747404253
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -71.45572210994173
+        }
+      }
+    },
+    "100000": {
+      "ordinary": {
+        "paired_cql": {
+          "mean": 52.10829558993529,
+          "sample_sd": 3.075972058140735,
+          "minimum": 48.506982905368154,
+          "maximum": 55.999473785842156,
+          "seed_means": {
+            "123": 55.999473785842156,
+            "124": 49.62582341178755,
+            "125": 52.43998611525208,
+            "126": 53.9692117314265,
+            "127": 48.506982905368154
+          }
+        },
+        "sarsa_cql": {
+          "mean": 59.29097423089412,
+          "sample_sd": 7.040495578012969,
+          "minimum": 51.10827738827633,
+          "maximum": 66.70077465237014,
+          "seed_means": {
+            "123": 64.76793839497856,
+            "124": 52.73469376151578,
+            "125": 51.10827738827633,
+            "126": 66.70077465237014,
+            "127": 61.14318695732978
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": 7.182678640958829,
+          "per_seed": {
+            "123": 8.768464609136402,
+            "124": 3.108870349728228,
+            "125": -1.331708726975755,
+            "126": 12.731562920943645,
+            "127": 12.636204051961627
+          },
+          "sarsa_lower_seeds": 1,
+          "percent_change_in_mean": 13.784136594070763
+        }
+      },
+      "stronger": {
+        "paired_cql": {
+          "mean": 175.60838515875804,
+          "sample_sd": 29.52199047137514,
+          "minimum": 147.18553305604166,
+          "maximum": 224.62095689584513,
+          "seed_means": {
+            "123": 177.99159876914754,
+            "124": 162.31312921959588,
+            "125": 147.18553305604166,
+            "126": 224.62095689584513,
+            "127": 165.9307078531599
+          }
+        },
+        "sarsa_cql": {
+          "mean": 85.46837937206037,
+          "sample_sd": 19.257144734545758,
+          "minimum": 60.81502004496112,
+          "maximum": 105.93436569494925,
+          "seed_means": {
+            "123": 88.63430084914089,
+            "124": 71.04322500389135,
+            "125": 60.81502004496112,
+            "126": 105.93436569494925,
+            "127": 100.91498526735924
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -90.14000578669766,
+          "per_seed": {
+            "123": -89.35729792000666,
+            "124": -91.26990421570453,
+            "125": -86.37051301108053,
+            "126": -118.68659120089588,
+            "127": -65.01572258580066
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -51.33012623811042
+        }
+      }
+    },
+    "330000": {
+      "ordinary": {
+        "paired_cql": {
+          "mean": 47.918978311324054,
+          "sample_sd": 5.058209430518466,
+          "minimum": 40.634658468007835,
+          "maximum": 53.44881751368982,
+          "seed_means": {
+            "123": 40.634658468007835,
+            "124": 45.08460314567568,
+            "125": 53.44881751368982,
+            "126": 49.94976630710752,
+            "127": 50.477046122139406
+          }
+        },
+        "sarsa_cql": {
+          "mean": 60.43962650676991,
+          "sample_sd": 4.513606914385364,
+          "minimum": 55.53822997678092,
+          "maximum": 65.65597197783586,
+          "seed_means": {
+            "123": 62.86667398153688,
+            "124": 62.27852003188411,
+            "125": 55.53822997678092,
+            "126": 65.65597197783586,
+            "127": 55.858736565811775
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": 12.520648195445858,
+          "per_seed": {
+            "123": 22.232015513529042,
+            "124": 17.193916886208434,
+            "125": 2.089412463091101,
+            "126": 15.706205670728345,
+            "127": 5.381690443672369
+          },
+          "sarsa_lower_seeds": 0,
+          "percent_change_in_mean": 26.128787876278704
+        }
+      },
+      "stronger": {
+        "paired_cql": {
+          "mean": 153.25971994507776,
+          "sample_sd": 19.884777475000764,
+          "minimum": 137.63419006615499,
+          "maximum": 184.32555584792937,
+          "seed_means": {
+            "123": 141.69796967176384,
+            "124": 140.56919819188835,
+            "125": 162.07168594765238,
+            "126": 137.63419006615499,
+            "127": 184.32555584792937
+          }
+        },
+        "sarsa_cql": {
+          "mean": 81.73402908663249,
+          "sample_sd": 13.725211969202002,
+          "minimum": 66.27750976594204,
+          "maximum": 104.02842975208478,
+          "seed_means": {
+            "123": 78.65784956163722,
+            "124": 80.5754672792177,
+            "125": 66.27750976594204,
+            "126": 104.02842975208478,
+            "127": 79.13088907428069
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -71.5256908584453,
+          "per_seed": {
+            "123": -63.04012011012662,
+            "124": -59.99373091267064,
+            "125": -95.79417618171034,
+            "126": -33.60576031407021,
+            "127": -105.19466677364868
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -46.66959517091461
+        }
+      }
+    },
+    "500000": {
+      "ordinary": {
+        "paired_cql": {
+          "mean": 47.440555471761186,
+          "sample_sd": 5.236763983084755,
+          "minimum": 42.2358142591787,
+          "maximum": 55.438490598473585,
+          "seed_means": {
+            "123": 43.921283759798555,
+            "124": 42.2358142591787,
+            "125": 55.438490598473585,
+            "126": 49.53414671172461,
+            "127": 46.07304202963048
+          }
+        },
+        "sarsa_cql": {
+          "mean": 57.240140433977025,
+          "sample_sd": 6.571454455433863,
+          "minimum": 47.28604435056271,
+          "maximum": 64.05063973882736,
+          "seed_means": {
+            "123": 61.78400856337301,
+            "124": 64.05063973882736,
+            "125": 54.86042035835449,
+            "126": 47.28604435056271,
+            "127": 58.219589158767555
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": 9.799584962215837,
+          "per_seed": {
+            "123": 17.86272480357445,
+            "124": 21.814825479648654,
+            "125": -0.5780702401190965,
+            "126": -2.248102361161898,
+            "127": 12.146547129137076
+          },
+          "sarsa_lower_seeds": 2,
+          "percent_change_in_mean": 20.65655611483934
+        }
+      },
+      "stronger": {
+        "paired_cql": {
+          "mean": 161.07429489014777,
+          "sample_sd": 30.849654140386942,
+          "minimum": 130.96524013788655,
+          "maximum": 211.98804122881444,
+          "seed_means": {
+            "123": 152.41621457023098,
+            "124": 130.96524013788655,
+            "125": 163.92588310942313,
+            "126": 146.07609540438366,
+            "127": 211.98804122881444
+          }
+        },
+        "sarsa_cql": {
+          "mean": 81.3406102815837,
+          "sample_sd": 9.158549072631732,
+          "minimum": 72.82536756105263,
+          "maximum": 93.7764615754041,
+          "seed_means": {
+            "123": 93.7764615754041,
+            "124": 79.5489496952776,
+            "125": 72.82536756105263,
+            "126": 73.10396538070704,
+            "127": 87.44830719547704
+          }
+        },
+        "sarsa_minus_actor": {
+          "mean": -79.73368460856406,
+          "per_seed": {
+            "123": -58.63975299482688,
+            "124": -51.416290442608954,
+            "125": -91.1005155483705,
+            "126": -72.97213002367663,
+            "127": -124.5397340333374
+          },
+          "sarsa_lower_seeds": 5,
+          "percent_change_in_mean": -49.50118494260194
+        }
+      }
+    }
+  },
+  "source_audit_sha256": "e749706434831ff4a6b8e71dd2d8f50708febb551864cd1fe9fe8b30e86a4e64",
+  "unchanged_result_sections_sha256": {
+    "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "paper_commit": "6f525cec102056fbd936d17bb5c5c36270e2329d0cd3c16fcc732e06be8aed2a",
+    "seeds": "dfcdf76b14bd2c700f711d86d9139169e044a1143ecdd8242a3c5d69f3a4d5e1",
+    "conditions": "1324396cecb87fd2446c8c3df07671d0b342bb31699660f95f53c8262082e780",
+    "aggregation": "bce6b6d8d001ed17ff357345e057600131284a8656f7fa17282fc22e08bfaf4e",
+    "learning_curves": "7b7231fd87f7a0e73ac187ef7af64d9944194d45360835b40d15b27ce85639a6",
+    "pd_validation_means": "1da7ee6d8211482c780030b2c6285ee9ddf354cce572ea69dd0e0405cfa6ba12",
+    "original_test": "369bd5ef93e3c51a655b4163386fb8165216b27f0a12bda0d979cd1383ab4007",
+    "robustness": "0d63c9db6fad67e05a2142b8ae5e7fbc178f64e98863234f44780b729cd43ffd",
+    "source_artifacts": "c84821ce426229f2228aaacc06325ad8413beb00c15a30ba224bf42c1a15e8ab",
+    "frozen_original_test_checkpoints": "4ea345c6a995b347ce28beed7e36837133d3c6765876de4ce986422d0518fff8",
+    "no_new_evaluation": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+    "no_smoothing": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+    "ablations.radius": "281ff16e81c9a028c9edb2febb9ddd12b4709f31315cc732506a90659448e080",
+    "ablations.core": "8d147fc2f93f5497a8ec6487992e0c3eae16adde13dbc0b8b99db2ae61cdcbf6",
+    "ablations.iql": "ff631aa2664e3cbb4fd9df3e49b359de9407ff630d5911b294a380a5ae39bbba",
+    "ablations.iql_bc_weight_tuning": "4e21fcbba9ff8042de359c3523cea4b5a8e5c9da127a28fcddda047fc8d9cc53"
+  },
+  "paper_figure_commit": "5f49fa108977c1bd39bb17a721721ec1cedc4e05",
+  "update_scope": "Replaces only ablations.cql in the bundled paper results. Original main CQL learning curves, held-out tests and robustness remain unchanged."
+}
